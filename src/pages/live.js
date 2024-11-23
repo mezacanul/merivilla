@@ -4,7 +4,7 @@ export default function Live() {
     return (
         <Box>
             <Heading size={"xl"}>Production Environment Testing</Heading>
-            {/* <Heading size={"lg"}>Live Preview</Heading>
+            <Heading size={"lg"}>Live Preview</Heading>
             <Heading size={"sm"} mb={"1em"} color={"green"}>Update Received</Heading>
             <Text mb={4}>This page comes from the following process:</Text>
             
@@ -13,7 +13,7 @@ export default function Live() {
                 <ListItem>Setting up a page with AWS Amplify</ListItem>
                 <ListItem>Updating the code locally</ListItem>
                 <ListItem>Pushing changes to main branch</ListItem>
-            </UnorderedList> */}
+            </UnorderedList>
         </Box>
     )
 }
