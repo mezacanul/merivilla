@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Navbar />
-      <main style={{margin: "2rem"}}>
+      <main style={{margin: "3rem"}}>
         <Component {...pageProps} />
       </main>
     </ChakraProvider>

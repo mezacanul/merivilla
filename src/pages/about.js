@@ -1,3 +1,11 @@
+import { FaLocationDot } from "react-icons/fa6";
+import { Flex, Text } from "@chakra-ui/react";
+
 export default function About() {
-    return <h1>About Us</h1>
+    return (
+        <Flex alignItems={"center"}>
+            <FaLocationDot />
+            <Text ms={"0.5em"}>Mérida, Yuc.</Text>
+        </Flex>
+    )
 }

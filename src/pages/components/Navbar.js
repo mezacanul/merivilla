@@ -1,36 +1,24 @@
-import NextLink from 'next/link'
-import { Link as ChakraLink } from '@chakra-ui/react'
-
-const Link = ({ href, children, ...props }) => {
-  return (
-    <NextLink href={href} passHref legacyBehavior>
-      <ChakraLink {...props}>
-        {children}
-      </ChakraLink>
-    </NextLink>
-  )
-}
+import Link from "./common/Link";
 import { Flex, Box } from "@chakra-ui/react";
-import { FaCircle } from "react-icons/fa";
-// import Link from 'next/link';
-import styles from "./Navbar.module.css"
+
+const LinkStyles = (pos) => {
+  if(pos == "left"){
+    return { me: "1em" }
+  } else if (pos == "right") {
+    return { ms: "1em"}
+  }
+}
 
 export default function Navbar() {
     return (
-        <Box border={"1px"}>
-            <Flex w={"40vw"} justifyContent={"space-between"} py={"1em"} px={"2em"}>
-                <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
-                <Link href="/next-test">Next Test</Link>
-                <Flex alignItems={"center"}>
-                    <Link href="/live" me={"0.5em"}>Live </Link>
-                    <FaCircle color="red" size="0.6rem" />
-                </Flex>
-                <b> | </b>
-                <Link href="/api/get/">Get</Link>
-                <Link href="/api/post">Post</Link>
-                <Link href="/api/hello">Hello</Link>
+        <Box borderBottom={"1px"}>
+            <Flex w={"auto"} justifyContent={"space-between"} py={"1em"} px={"2em"}>
+                <Link {...(LinkStyles("left"))} href="/">Merivilla Co.</Link>
+
+                <Box>
+                  <Link {...(LinkStyles("right"))} href="/about">About</Link>
+                  <Link {...(LinkStyles("right"))} href="/contact">Contact</Link>
+                </Box>
             </Flex>
         </Box>
   )
