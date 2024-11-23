@@ -1,4 +1,5 @@
-import Link from "../components/common/Link";
+// import Link from "../components/common/Link";
+import Link from "next/link";
 import { Flex, Box } from "@chakra-ui/react";
 
 const LinkStyles = (pos) => {
@@ -13,12 +14,12 @@ export default function Navbar() {
     return (
         <Box borderBottom={"1px"}>
             <Flex w={"auto"} justifyContent={"space-between"} py={"1em"} px={"2em"}>
-                <Link {...(LinkStyles("left"))} href="/">Merivilla Co.</Link>
+                <Link style={{marginRight: "1em"}} {...(LinkStyles("left"))} href="/">Merivilla Co.</Link>
 
                 <Box>
-                  <Link {...(LinkStyles("right"))} href="/about">About</Link>
+                  <Link style={{marginLeft: "1em"}} {...(LinkStyles("right"))} href="/about">About</Link>
                   {/* <Link {...(LinkStyles("right"))} href="/contact">Contact</Link> */}
-                  <Link {...(LinkStyles("right"))} href="/api/get">API</Link>
+                  <Link style={{marginLeft: "1em"}} {...(LinkStyles("right"))} href="/api/get">API</Link>
                 </Box>
             </Flex>
         </Box>
