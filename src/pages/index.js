@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Text, Flex, Center } from "@chakra-ui/react"
 
 const variants = {
-  hidden: { opacity: 0 },
-  enter: { opacity: 1 },
+  hidden: { opacity: 0, scale: 0.9 },
+  enter: { opacity: 1, scale: 1 },
   exit: { opacity: 0 },
 };
 
@@ -14,10 +14,10 @@ export default function App() {
         animate="enter"
         exit="exit"
         variants={variants}
-        transition={{ duration: 2, ease: "easeOut" }}
+        transition={{ duration: 3, ease: "easeOut" }}
       >
       <Flex justifyContent={"center"} alignItems={"center"} height={"70vh"}>
-        <Text>Coming soon...</Text>
+        <Text fontSize={"xl"}>Coming soon...</Text>
       </Flex>
     </motion.div>
   )

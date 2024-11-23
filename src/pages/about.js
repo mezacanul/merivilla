@@ -15,10 +15,10 @@ export default function About() {
             animate="enter"
             exit="exit"
             variants={variants}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 2, ease: "easeOut" }}
         >
             <Flex alignItems={"center"}>
-                <FaLocationDot />
+                <FaLocationDot fontSize={"0.9em"} />
                 <Text ms={"0.5em"}>Mérida, Yuc. México</Text>
             </Flex>
         </motion.div>
