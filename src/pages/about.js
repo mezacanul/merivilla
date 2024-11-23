@@ -5,7 +5,7 @@ export default function About() {
     return (
         <Flex alignItems={"center"}>
             <FaLocationDot />
-            <Text ms={"0.5em"}>Mérida, Yuc.</Text>
+            <Text ms={"0.5em"}>Mérida, Yuc. México</Text>
         </Flex>
     )
 }

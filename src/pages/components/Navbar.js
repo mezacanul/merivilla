@@ -17,7 +17,8 @@ export default function Navbar() {
 
                 <Box>
                   <Link {...(LinkStyles("right"))} href="/about">About</Link>
-                  <Link {...(LinkStyles("right"))} href="/contact">Contact</Link>
+                  {/* <Link {...(LinkStyles("right"))} href="/contact">Contact</Link> */}
+                  <Link {...(LinkStyles("right"))} href="/api/get">API</Link>
                 </Box>
             </Flex>
         </Box>
