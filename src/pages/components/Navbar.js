@@ -1,4 +1,4 @@
-import Link from "./common/Link";
+import Link from "../components/common/Link";
 import { Flex, Box } from "@chakra-ui/react";
 
 const LinkStyles = (pos) => {
