@@ -1,4 +1,4 @@
-import { Text, Flex, Box, Heading, Image, HStack } from "@chakra-ui/react"
+import { Text, Flex, Box, Heading, Image, HStack, ring } from "@chakra-ui/react"
 import GoldButton from "../common/GoldButton"
 
 export default function Hero(){
@@ -53,7 +53,9 @@ export default function Hero(){
       px: "1rem",
       position: "absolute",
       bottom: "5rem",
-      right: "25rem",
+      // right: "25rem",
+      right: "50%",
+      transform: "translateX(50%)",
       textAlign: "center",
       borderRadius: "0.4rem"
     },
