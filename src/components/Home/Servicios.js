@@ -108,7 +108,8 @@ function Servicio({ direction, number, title, text, cta, imgUrl }) {
                 top={"-3.5rem"}
                 {...(direction == "right" ? { left: 0 } : { right: 0 })}
                 bgGradient={
-                    "linear-gradient(-45deg, #644609 10%, #f6b431 50%) 1"
+                    // "linear-gradient(-45deg, #644609 10%, #f6b431 50%) 1"
+                    "linear-gradient(45deg, #9c6a07 0%,#dbb262 80%) 1"
                 }
                 bgClip={"text"}
             >
