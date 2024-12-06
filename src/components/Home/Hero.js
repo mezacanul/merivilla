@@ -1,7 +1,7 @@
 import { Text, Flex, Box, Heading, Image, HStack } from "@chakra-ui/react"
 import GoldButton from "../common/GoldButton"
 
-export default function HeroSection(){
+export default function Hero(){
     return (
       <Flex {...styles.container} >
         <Box {...styles.blackOverlay}/>

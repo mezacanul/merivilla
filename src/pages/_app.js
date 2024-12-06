@@ -1,8 +1,8 @@
 import { ChakraProvider, HStack, VStack } from "@chakra-ui/react";
 import { AnimatePresence, color } from "framer-motion";
 import theme from "../styles/theme";
-import Header from "@/pages/components/Shared/Header";
-import Footer from "@/pages/components/Shared/Footer";
+import Header from "@/components/Shared/Header";
+import Footer from "@/components/Shared/Footer";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { Box, Text } from "@chakra-ui/react";
