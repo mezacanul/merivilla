@@ -1,11 +1,4 @@
-import {
-    Box,
-    Circle,
-    Heading,
-    HStack,
-    Text,
-    VStack,
-} from "@chakra-ui/react";
+import { Box, Circle, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { BsSpeedometer } from "react-icons/bs";
 import { TbWorld } from "react-icons/tb";
 import { IoIosPeople } from "react-icons/io";
@@ -16,13 +9,13 @@ import SectionLayout from "@/layout/SectionLayout";
 
 export default function Servicios() {
     return (
-        <SectionLayout maxW={"container.md"} color={"black"}>
+        <SectionLayout maxW={"container.sm"} color={"black"} py={"7rem"}>
             <Heading size={"2xl"} textAlign={"center"}>
                 COMO TE AYUDAMOS
             </Heading>
 
             {/* Servicios  */}
-            <VStack my={"10rem"} spacing={"8rem"}>
+            <VStack my={"7rem"} spacing={"5rem"}>
                 <Servicio
                     direction={"right"}
                     number={1}
@@ -32,6 +25,7 @@ export default function Servicios() {
                     }
                     cta={"VER CONTENIDO"}
                     imgUrl={"serv1.jpg"}
+                    bg={"#505784"}
                 />
 
                 <Servicio
@@ -43,17 +37,31 @@ export default function Servicios() {
                     }
                     cta={"AGENDAR LLAMADA"}
                     imgUrl={"serv2.webp"}
+                    bg={"#EBEBEB"}
                 />
 
                 <Servicio
                     direction={"right"}
                     number={3}
-                    title={"SOFTWARE VENTAJE"}
+                    title={
+                        <>
+                            {"SOFTWARE "}
+                            <Text
+                                // bgGradient="linear(to-r, #671ac5, #a081ff)"
+                                // bgClip="text"
+                                fontWeight={"800"}
+                                display={"inline"}
+                            >
+                                VENTAJE
+                            </Text>
+                        </>
+                    }
                     text={
                         "Lorem esse mollit ad laboris. Fugiat consequat labore ut qui in enim sunt esse consequat tempor consectetur veniam. Duis excepteur sint nisi enim est aute commodo nisi commodo ad officia nostrud pariatur."
                     }
                     cta={"VER EL SOFTWARE"}
                     imgUrl={"serv3.webp"}
+                    bg={"#505784"}
                 />
             </VStack>
 
@@ -83,7 +91,8 @@ function LinkButton({ children }) {
     return (
         <Link
             href="/target-page"
-            fontSize="0.8rem" fontWeight={800}
+            fontSize="0.8rem"
+            fontWeight={800}
             borderBottom={"1px"}
             transition="all 0.3s ease-out" // Apply transition to the entire Link element
             _hover={{
@@ -95,7 +104,7 @@ function LinkButton({ children }) {
     );
 }
 
-function Servicio({ direction, number, title, text, cta, imgUrl }) {
+function Servicio({ direction, number, title, text, cta, imgUrl, bg }) {
     let img = `url("/${imgUrl}")`;
     let flexDir = direction != "left" ? "row" : "row-reverse";
 
@@ -119,17 +128,21 @@ function Servicio({ direction, number, title, text, cta, imgUrl }) {
             {/* Text Box  */}
             <VStack
                 borderRadius={2}
-                boxShadow={`${direction == "right"? "30px" : "-30px"} 25px 40px rgba(0,0,0,0.4)`}
+                boxShadow={`${
+                    direction == "right" ? "30px" : "-30px"
+                } 25px 40px rgba(0,0,0,0.4)`}
                 zIndex={2}
-                {...(direction == "right" ? {mr: "-4rem"} : {ml: "-4rem"})}
+                {...(direction == "right" ? { mr: "-4rem" } : { ml: "-4rem" })}
                 // mr={"-4rem"}
-                bgColor={"#527894"}
-                color={"white"}
-                w={"45%"}
-                py={"3rem"}
-                px={"1rem"}
+                bgColor={bg}
+                color={bg == "#EBEBEB" ? "black" : "white"}
+                w={"50%"}
+                py={"2rem"}
+                px={"2rem"}
             >
-                <Heading fontSize={"lg"} fontWeight={400}>{title}</Heading>
+                <Heading fontSize={"lg"} fontWeight={300}>
+                    {title}
+                </Heading>
                 <Text fontSize={"xs"} textAlign={"center"} mb={"0.5rem"}>
                     {text}
                 </Text>
@@ -137,8 +150,13 @@ function Servicio({ direction, number, title, text, cta, imgUrl }) {
             </VStack>
 
             {/* Image Box  */}
-            <Box bgImage={img} backgroundSize={"cover"} w={"55%"} h={"25rem"}>
-                <Box w={"100%"} h={"100%"} bgColor={"#527894"} opacity={0.65} />
+            <Box bgImage={img} backgroundSize={"cover"} w={"60%"} h={"22rem"}>
+                <Box
+                    w={"100%"}
+                    h={"100%"}
+                    bgColor={bg == "#EBEBEB" ? "#505784" : "#EBEBEB"}
+                    opacity={0.65}
+                />
             </Box>
         </HStack>
     );
@@ -150,8 +168,8 @@ function Beneficio({ icon, title, text }) {
             <Circle
                 mb={"1rem"}
                 borderWidth={"0.4rem"}
-                borderColor={"#5c87a6"}
-                color={"#5c87a6"}
+                borderColor={"#505784"}
+                color={"#505784"}
                 padding={"1rem"}
                 fontSize={"5rem"}
             >

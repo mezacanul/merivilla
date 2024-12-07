@@ -4,7 +4,7 @@ import GoldButton from "../common/GoldButton";
 
 export default function QuienesSomos() {
     return (
-        <SectionLayout maxW={"container.xl"} bg={"#527894"} color={"white"}>
+        <SectionLayout maxW={"container.xl"} bg={"#505784"} color={"white"}>
             <HStack>
                 <VStack w={"50%"} align={"flex-start"} px={"2rem"} spacing={"2rem"}>
                     <Heading size={"3xl"} fontWeight={400} textAlign={"center"}>
@@ -31,7 +31,7 @@ export default function QuienesSomos() {
                     <Box
                         w={"100%"}
                         h={"100%"}
-                        bgColor={"#527894"}
+                        bgColor={"#cfcfcf"}
                         opacity={0.65}
                     />
                 </Box>

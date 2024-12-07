@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <title>Merivilla Co.</title>
       </Head>
-      <body style={{background: "#efefef"}}>
+      <body style={{background: "#ffffff"}}>
         <Main />
         <NextScript />
       </body>

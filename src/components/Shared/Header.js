@@ -46,7 +46,7 @@ export default function Header({onOpen}) {
                     {...LinkStyles("left")}
                     href="/"
                 >
-                    <Text display={"inline"} fontWeight="bold">
+                    <Text display={"inline"} fontWeight={800}>
                         MERIVILLA
                     </Text>{" "}
                     CO.

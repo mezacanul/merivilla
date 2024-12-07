@@ -10,7 +10,7 @@ export default function Contacto() {
             maxW={"container.lg"}
             bg={"url(/formulario.webp)"}
             backdrop={true}
-            backdropColor={"#527894"}
+            backdropColor={"#505784"}
             backdropOpacity={0.7}
         >
             <HStack mt={"5rem"}>
@@ -22,10 +22,6 @@ export default function Contacto() {
 }
 
 function Formulario() {
-    // useEffect(()=>{
-    //     console.log(Object.keys(countries));
-    // }, [])
-
     return (
         <Box w={"50%"} px={"2rem"}>
             <VStack>
