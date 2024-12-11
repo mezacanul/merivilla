@@ -4,18 +4,19 @@ import GoldButton from "../common/GoldButton";
 
 export default function QuienesSomos() {
     return (
-        <SectionLayout maxW={"container.xl"} bg={"blue"} color={"white"}>
+        <SectionLayout maxW={"85%"} bg={"blue"} color={"white"} py="7rem">
             <HStack>
                 <VStack
                     w={"50%"}
                     align={"flex-start"}
                     px={"2rem"}
                     spacing={"2rem"}
+                    mr={"4rem"}
                 >
-                    <Heading size={"3xl"} fontWeight={400} textAlign={"center"}>
+                    <Heading size={"4xl"} fontWeight={400} textAlign={"center"}>
                         QUIENES SOMOS
                     </Heading>
-                    <Text mb={"0.3rem"}>
+                    <Text fontSize={"1.4rem"} mb={"0.3rem"}>
                         Desde Yucatán y Estados Unidos, con un conocimiento
                         profundo sobre el mercado inmobiliario, combinado con
                         una experiencia sólida en las más recientes innovaciones
@@ -24,7 +25,7 @@ export default function QuienesSomos() {
                         se unió para crear y ofrecer un valor excepcional a los
                         inmobiliarios.
                     </Text>
-                    <Text mb={"0.5rem"}>
+                    <Text fontSize={"1.4rem"} mb={"0.5rem"}>
                         <>
                             {`Un ambiente enfocado en la excelencia, complementado con
                             estrategias actualizadas, herramientas innovadoras que
@@ -38,14 +39,14 @@ export default function QuienesSomos() {
                         </>
                     </Text>
 
-                    <GoldButton>SOBRE NOSOTROS</GoldButton>
+                    <GoldButton fontSize={"lg"}>SOBRE NOSOTROS</GoldButton>
                 </VStack>
 
                 <Box
                     bgImage={"url('/acerca.webp')"}
                     backgroundSize={"cover"}
-                    w={"55%"}
-                    h={"25rem"}
+                    w={"50%"}
+                    h={"35rem"}
                     boxShadow={"-30px 30px 30px rgba(0,0,0,0.3)"}
                 >
                     <Box

@@ -7,12 +7,12 @@ const Divider = () => {
 
 export default function Footer() {
     return (
-        <Box bg={"black"} px={"6rem"} pt={"5rem"} pb={"6rem"}>
-            <Container maxW={"container.lg"}>
+        <Box bg={"black"} px={"6rem"} pt={"3rem"} pb={"3rem"}>
+            <Container maxW={"container.xl"}>
                 <HStack
                     justify={"center"}
                     spacing={"0.8rem"}
-                    fontSize={"0.9rem"}
+                    fontSize={"1.5rem"}
                     mb={"2rem"}
                 >
                     <Link href={"#"}>POLITICA DE PRIVACIDAD</Link>

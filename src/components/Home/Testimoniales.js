@@ -4,16 +4,17 @@ import SectionLayout from "@/layout/SectionLayout";
 export default function Testimoniales() {
     return (
         <SectionLayout
-            maxW={"container.xl"}
+            // maxW={"container.xl"}
             bg={"blue"}
             color={"white"}
-            py="5rem"
+            py="6rem"
+            maxW={"85%"}
         >
-            <Heading size={"3xl"} textAlign={"center"} fontWeight={400}>
+            <Heading size={"4xl"} textAlign={"center"} fontWeight={400}>
                 TESTIMONIALES
             </Heading>
 
-            <HStack my={"7rem"} justify={"space-between"}>
+            <HStack my={"4rem"} justify={"space-between"} align={"stretch"}>
                 <Testimonial
                     image={"url('/face1.jpg')"}
                     text={
@@ -55,7 +56,7 @@ function Testimonial({ image, text, name }) {
         // <Box>
             <VStack
                 w={"23%"}
-                h={"27rem"}
+                // h={"25rem"}
                 textAlign={"center"}
                 bg={"white"}
                 color={"black"}
@@ -73,11 +74,11 @@ function Testimonial({ image, text, name }) {
                         backgroundSize={"cover"}
                         boxShadow={"0px 5px 10px rgba(39, 39, 39, 0.3)"}
                     />
-                    <Text width={"80%"} fontWeight={"800"} fontSize={"sm"} mb={"0.5rem"}>
+                    <Text width={"80%"} fontWeight={"800"} fontSize={"lg"} mb={"0.5rem"}>
                         {text}
                     </Text>
                 </VStack>
-                <Heading fontSize="md" fontWeight={400}>
+                <Heading fontSize="xl" fontWeight={400}>
                     {name}
                 </Heading>
             </VStack>

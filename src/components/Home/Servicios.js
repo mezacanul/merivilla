@@ -1,4 +1,4 @@
-import { Box, Circle, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Circle, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { HiMiniArrowsPointingIn } from "react-icons/hi2";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { IoPeopleSharp } from "react-icons/io5";
@@ -10,89 +10,117 @@ import SectionLayout from "@/layout/SectionLayout";
 
 export default function Servicios() {
     return (
-        <SectionLayout maxW={"container.sm"} color={"black"} py={"7rem"}>
-            <Heading size={"2xl"} textAlign={"center"}>
-                COMO TE AYUDAMOS
-            </Heading>
+        <>
+            <SectionLayout maxW={"container.lg"} color={"black"} py={"4rem"}>
+                <Heading size={"3xl"} textAlign={"center"} fontWeight={500}>
+                    COMO TE AYUDAMOS
+                </Heading>
 
-            {/* Servicios  */}
-            <VStack my={"7rem"} spacing={"5rem"}>
-                <Servicio
-                    direction={"right"}
-                    number={1}
-                    title={"CONTENIDO EDUCATIVO"}
-                    text={
-                        "Accede a más de 100 piezas de contenido diseñadas específicamente para impulsar tu negocio. Desde estrategias de marketing y ventas hasta finanzas y más, nuestro equipo está actualizado con las técnicas más efectivas y modernas del mercado."
-                    }
-                    cta={"VER CONTENIDO"}
-                    imgUrl={"serv2.webp"}
-                    bg={"blue"}
-                />
+                {/* Servicios  */}
+                <VStack my={"6rem"} spacing={"6rem"}>
+                    <Servicio
+                        direction={"right"}
+                        number={1}
+                        title={"CONTENIDO EDUCATIVO"}
+                        text={
+                            "Accede a más de 100 piezas de contenido diseñadas específicamente para impulsar tu negocio. Desde estrategias de marketing y ventas hasta finanzas y más, nuestro equipo está actualizado con las técnicas más efectivas y modernas del mercado."
+                        }
+                        cta={"VER CONTENIDO"}
+                        href={"/contenidoeducativo"}
+                        imgUrl={"serv2.webp"}
+                        bg={"blue"}
+                    />
 
-                <Servicio
-                    direction={"left"}
-                    number={2}
-                    title={"CONSULTAS Y GUIANZA"}
-                    text={
-                        "Conéctate con nuestros expertos para recibir asesoramiento y capacitación. Te ayudaremos a identificar tus retos y crear un plan de acción personalizado para que obtengas resultados efectivos en cualquier área de tu negocio."
-                    }
-                    cta={"AGENDAR LLAMADA"}
-                    imgUrl={"serv1.jpg"}
-                    bg={"light"}
-                />
+                    <Servicio
+                        direction={"left"}
+                        number={2}
+                        title={"CONSULTAS Y GUIANZA"}
+                        text={
+                            "Conéctate con nuestros expertos para recibir asesoramiento y capacitación. Te ayudaremos a identificar tus retos y crear un plan de acción personalizado para que obtengas resultados efectivos en cualquier área de tu negocio."
+                        }
+                        cta={"AGENDAR LLAMADA"}
+                        href={"/consultoria"}
+                        imgUrl={"serv1.jpg"}
+                        bg={"light"}
+                    />
 
-                <Servicio
-                    direction={"right"}
-                    number={3}
-                    title={
-                        <>
-                            {"SOFTWARE "}
-                            <Text as={"span"} fontWeight={"800"} display={"inline"}>
-                                VENTAJE
-                            </Text>
-                        </>
-                    }
-                    text={
-                        <>
-                            {"La plataforma más avanzada del mercado inmobiliario. Con herramientas de automatización, centralización y un equipo dedicado, "}
-                            <Text as={"span"} fontWeight={"800"} display={"inline"}>
-                                Ventaje
-                            </Text>
-                            {" te permitirá lograr más con menos inversión. Una vez que lo pruebes, no querrás volver atrás."}
-                        </>
-                    }
-                    cta={"VER EL SOFTWARE"}
-                    imgUrl={"ventaje.png"}
-                    bg={"blue"}
-                />
-            </VStack>
+                    <Servicio
+                        direction={"right"}
+                        number={3}
+                        title={
+                            <>
+                                {"SOFTWARE "}
+                                <Text as={"span"} fontWeight={"800"} display={"inline"}>
+                                    VENTAJE
+                                </Text>
+                            </>
+                        }
+                        text={
+                            <>
+                                {"La plataforma más avanzada del mercado inmobiliario. Con herramientas de automatización, centralización y un equipo dedicado, "}
+                                <Text as={"span"} fontWeight={"800"} display={"inline"}>
+                                    Ventaje
+                                </Text>
+                                {" te permitirá lograr más con menos inversión. Una vez que lo pruebes, no querrás volver atrás."}
+                            </>
+                        }
+                        cta={"VER EL SOFTWARE"}
+                        href={"/ventaje"}
+                        imgUrl={"ventaje.png"}
+                        bg={"blue"}
+                    />
+                </VStack>
+
+                {/* Beneficios  */}
+                {/* <HStack justify={"space-around"} my={"3rem"}>
+                    <Beneficio
+                        icon={<IoPeopleSharp />}
+                        title={"EQUIPO PERSONALIZAD"}
+                        text={"Te asignamos un equipo altamente capacitado de Merivilla Co."}
+                    />
+                    <Beneficio
+                        icon={<HiMiniArrowsPointingIn />}
+                        title={"ADMINISTRA"}
+                        text={"Todos los aspectos de tu negocio desde una plataforma centralizada en tiempo real."}
+                    />
+                    <Beneficio
+                        icon={<FaMoneyBillTrendUp />}
+                        title={"OPTIMIZA"}
+                        text={"Toma el control, reduce tus gastos, tiempo, y aun te daremos mas resultados."}
+                    />
+                </HStack> */}
+            </SectionLayout>
 
             {/* Beneficios  */}
-            <HStack justify={"space-around"} my={"3rem"}>
-                <Beneficio
-                    icon={<IoPeopleSharp />}
-                    title={"EQUIPO PERSONALIZAD"}
-                    text={"Te asignamos un equipo altamente capacitado de Merivilla Co."}
-                />
-                <Beneficio
-                    icon={<HiMiniArrowsPointingIn />}
-                    title={"ADMINISTRA"}
-                    text={"Todos los aspectos de tu negocio desde una plataforma centralizada en tiempo real."}
-                />
-                <Beneficio
-                    icon={<FaMoneyBillTrendUp />}
-                    title={"OPTIMIZA"}
-                    text={"Toma el control, reduce tus gastos, tiempo, y aun te daremos mas resultados."}
-                />
-            </HStack>
-        </SectionLayout>
+            <Container maxW={"container.xl"} color={"black"} mt={"-8rem"} mb={"4rem"}>
+                <HStack justify={"space-around"} my={"3rem"} align={"flex-start"}>
+                    <Beneficio
+                        icon={<IoPeopleSharp />}
+                        title={"EQUIPO PERSONALIZADO"}
+                        text={"Te asignamos un equipo altamente capacitado de Merivilla Co."}
+                    />
+
+                    <Beneficio
+                        icon={<HiMiniArrowsPointingIn />}
+                        title={"ADMINISTRA"}
+                        text={"Todos los aspectos de tu negocio desde una plataforma centralizada en tiempo real."}
+                    />
+                    
+                    <Beneficio
+                        icon={<FaMoneyBillTrendUp />}
+                        title={"OPTIMIZA"}
+                        text={"Toma el control, reduce tus gastos, tiempo, y aun te daremos mas resultados."}
+                    />
+                </HStack>
+            </Container>
+        </>
     );
 }
 
-function LinkButton({ children }) {
+function LinkButton({ children, href, ...props }) {
     return (
         <Link
-            href="/target-page"
+            href={href}
             fontSize="0.8rem"
             fontWeight={800}
             borderBottom={"1px"}
@@ -100,13 +128,14 @@ function LinkButton({ children }) {
             _hover={{
                 transform: "scale(1.05)",
             }}
+            {...props}
         >
             {children}
         </Link>
     );
 }
 
-function Servicio({ direction, number, title, text, cta, imgUrl, bg }) {
+function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
     let img = `url("/${imgUrl}")`;
     let flexDir = direction != "left" ? "row" : "row-reverse";
 
@@ -138,21 +167,21 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg }) {
                 // mr={"-4rem"}
                 bgColor={bg}
                 color={bg == "light" ? "black" : "white"}
-                w={"50%"}
-                py={"2rem"}
+                w={"45%"}
+                py={"3.5rem"}
                 px={"2rem"}
             >
-                <Heading fontSize={"lg"} fontWeight={300}>
+                <Heading fontSize={"2xl"} fontWeight={500} mb={"0.7rem"}>
                     {title}
                 </Heading>
-                <Text fontSize={"xs"} textAlign={"center"} mb={"0.5rem"}>
+                <Text fontSize={"lg"} textAlign={"center"} mb={"0.5rem"}>
                     {text}
                 </Text>
-                <LinkButton>{cta}</LinkButton>
+                <LinkButton fontSize={"lg"} href={href}>{cta}</LinkButton>
             </VStack>
 
             {/* Image Box  */}
-            <Box bgImage={img} backgroundSize={"cover"} w={"60%"} h={"22rem"}>
+            <Box bgImage={img} backgroundSize={"cover"} w={"50%"} h={"30rem"}>
                 <Box
                     w={"100%"}
                     h={"100%"}
@@ -166,21 +195,22 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg }) {
 
 function Beneficio({ icon, title, text }) {
     return (
-        <VStack>
+        <VStack w={"30%"}>
             <Circle
                 mb={"1rem"}
-                borderWidth={"0.7rem"}
-                borderColor={"blue"}
+                // borderWidth={"0.7rem"}
+                // borderColor={"blue"}
+                borderColor={"transparent"}
                 color={"softBlue"}
                 padding={"2rem"}
                 fontSize={"5rem"}
             >
                 {icon}
             </Circle>
-            <Heading fontSize="xl" textAlign={"center"}>
+            <Heading fontSize="2xl" textAlign={"center"} width={"80%"} mb={"0.6rem"}>
                 {title}
             </Heading>
-            <Text textAlign={"center"} width={"80%"}>
+            <Text fontSize="xl" textAlign={"center"} width={"75%"}>
                 {text}
             </Text>
         </VStack>

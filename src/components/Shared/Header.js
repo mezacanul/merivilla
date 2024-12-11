@@ -17,6 +17,8 @@ export default function Header({onOpen}) {
     const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
+        console.log(router.asPath);
+        
         const handleScroll = () => {
             setScrolling(window.scrollY > 50); // Change this value for different thresholds
         };
@@ -29,14 +31,15 @@ export default function Header({onOpen}) {
 
     return (
         <Flex
+            fontSize={"1.8rem"}
             zIndex={10}
-            minH={"3rem"}
+            minH={"6rem"}
             alignItems={"center"}
             backgroundColor={"transparent"}
             position={"fixed"}
             width={"100vw"}
             bg={scrolling ? "#efefef" : "transparent"} // Transition between colors
-            color={scrolling ? "black" : "white"} // Text color based on background
+            color={scrolling || ((router.asPath) != "/") ? "black" : "white"} // Text color based on background
             boxShadow={scrolling ? "lg" : "none"}
             transition="background-color 0.4s ease, box-shadow 0.3s ease"
         >
@@ -53,7 +56,7 @@ export default function Header({onOpen}) {
                 </Link>
 
                 <Box onClick={onOpen}>
-                    <HamburgerIcon w={6} h={6} cursor="pointer" />
+                    <HamburgerIcon fontSize={"2.8rem"} cursor="pointer" />
                 </Box>
             </Flex>
         </Flex>

@@ -1,12 +1,13 @@
 import { Button } from "@chakra-ui/react"
 
-export default function GoldButton({children, w}) {
+export default function GoldButton({children, w, ...props}) {
     return (
         <Button 
           variant={"link"} 
           color={"white"}
           {...styles.btn}
           w={w}
+          {...props}
         >
           {children}
         </Button>
@@ -27,7 +28,7 @@ const styles = {
             // borderColor:"white",
             transform: "scale(1.04)",
         },
-        px: 4,
-        py: 3
+        px: "2rem",
+        py: "1rem"
     },
 }

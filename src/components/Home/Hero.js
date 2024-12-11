@@ -17,9 +17,9 @@ export default function Hero() {
             <Box zIndex={1}>
                 <Heading
                     fontWeight={"200"}
-                    size={"3xl"}
+                    size={"4xl"}
                     mb={"1rem"}
-                    width={"45vw"}
+                    width={"50vw"}
                 >
                     <Text display={"inline"} fontWeight={600} size={"3xl"}>
                         EVOLUCIONA
@@ -29,7 +29,7 @@ export default function Hero() {
                         2025
                     </Text>
                 </Heading>
-                <Text w={"35vw"} mb={"1rem"} fontWeight={"400"}>
+                <Text fontSize={"2xl"} w={"45vw"} mb={"3rem"} fontWeight={"400"}>
                     Ante una industria competitiva en innovación constante,{" "}
                     <Text fontWeight={600} as={"span"}>
                         Merivilla Co
@@ -38,7 +38,7 @@ export default function Hero() {
                     adaptarse, sino estar adelante del mercado y llevar tu
                     negocio al siguiente nivel.
                 </Text>
-                <GoldButton>INSCRIBETE HOY</GoldButton>
+                <GoldButton fontSize={"xl"}>INSCRIBETE HOY</GoldButton>
             </Box>
 
             <HStack
@@ -47,16 +47,16 @@ export default function Hero() {
             >
                 <Box {...styles.testimonialText}>
                     <Text
-                        fontSize={"0.9rem"}
+                        fontSize={"xl"}
                         fontWeight={800}
-                        w={"75%"}
+                        w={"85%"}
                         margin={"auto"}
                     >
                         "Gracias a Merivilla Co, este año nuestro desarrollo
                         será el más vendido en el municipio de Aldea Zamá,
                         Tulum."
                     </Text>
-                    <Text fontWeight={300} mt={"1rem"}>
+                    <Text fontSize={"xl"} fontWeight={400} mt={"1rem"}>
                         CEO de DOGE
                     </Text>
                 </Box>
@@ -77,8 +77,8 @@ const styles = {
         backgroundRepeat: "no-repeat",
         position: "relative",
         alignItems: "center",
-        paddingLeft: "4rem",
-        pb: "5rem",
+        paddingLeft: "9rem",
+        pb: "12.5rem",
     },
     blackOverlay: {
         position: "absolute",
@@ -92,19 +92,19 @@ const styles = {
         opacity: 0.7,
     },
     testimonial: {
-        width: "40rem",
-        background: "#ffffffd5",
+        width: "50rem",
+        background: "#ffffff",
         zIndex: 1,
         color: "black",
-        py: "1.5rem",
-        px: "1rem",
+        py: "2.5rem",
+        px: "2rem",
         position: "absolute",
         bottom: "5rem",
         // right: "25rem",
         right: "50%",
         transform: "translateX(50%)",
         textAlign: "center",
-        borderRadius: "0.4rem",
+        // borderRadius: "0.4rem",
     },
     img: {
         width: "7rem",
