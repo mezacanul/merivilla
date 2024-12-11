@@ -4,20 +4,40 @@ import GoldButton from "../common/GoldButton";
 
 export default function QuienesSomos() {
     return (
-        <SectionLayout maxW={"container.xl"} bg={"#505784"} color={"white"}>
+        <SectionLayout maxW={"container.xl"} bg={"blue"} color={"white"}>
             <HStack>
-                <VStack w={"50%"} align={"flex-start"} px={"2rem"} spacing={"2rem"}>
+                <VStack
+                    w={"50%"}
+                    align={"flex-start"}
+                    px={"2rem"}
+                    spacing={"2rem"}
+                >
                     <Heading size={"3xl"} fontWeight={400} textAlign={"center"}>
                         QUIENES SOMOS
                     </Heading>
-                    <Text mb={"0.5rem"}>
-                        Duis amet minim sunt mollit nostrud id est non nulla in
-                        dolore est culpa qui. Reprehenderit enim consequat
-                        exercitation cillum. Proident in do pariatur tempor
-                        exercitation. Dolor elit cupidatat voluptate occaecat
-                        non nulla ut velit id incididunt ullamco exercitation
-                        Lorem. Eu nulla adipisicing est culpa nulla nulla.
+                    <Text mb={"0.3rem"}>
+                        Desde Yucatán y Estados Unidos, con un conocimiento
+                        profundo sobre el mercado inmobiliario, combinado con
+                        una experiencia sólida en las más recientes innovaciones
+                        tecnológicas y un entrenamiento de ventas inspirado en
+                        las mejores prácticas de Estados Unidos, nuestro equipo
+                        se unió para crear y ofrecer un valor excepcional a los
+                        inmobiliarios.
                     </Text>
+                    <Text mb={"0.5rem"}>
+                        <>
+                            {`Un ambiente enfocado en la excelencia, complementado con
+                            estrategias actualizadas, herramientas innovadoras que
+                            pocos conocen y menos saben manejar, y una red de
+                            expertos en todos los aspectos de la industria. `}
+                            <Text as={"span"} fontWeight={800} display={"inline"}>
+                                Merivilla Co
+                            </Text> 
+                            {` está aquí para transformar negocios
+                            inmobiliarios.`}
+                        </>
+                    </Text>
+
                     <GoldButton>SOBRE NOSOTROS</GoldButton>
                 </VStack>
 

@@ -8,7 +8,7 @@ const Divider = () => {
 export default function Footer() {
     return (
         <Box bg={"black"} px={"6rem"} pt={"5rem"} pb={"6rem"}>
-            <Container>
+            <Container maxW={"container.lg"}>
                 <HStack
                     justify={"center"}
                     spacing={"0.8rem"}

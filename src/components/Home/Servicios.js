@@ -1,7 +1,8 @@
 import { Box, Circle, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-import { BsSpeedometer } from "react-icons/bs";
-import { TbWorld } from "react-icons/tb";
-import { IoIosPeople } from "react-icons/io";
+import { HiMiniArrowsPointingIn } from "react-icons/hi2";
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
+import { IoPeopleSharp } from "react-icons/io5";
+// import { IoIosPeople } from "react-icons/io";
 
 import { Link } from "@chakra-ui/react";
 
@@ -21,11 +22,11 @@ export default function Servicios() {
                     number={1}
                     title={"CONTENIDO EDUCATIVO"}
                     text={
-                        "Lorem esse mollit ad laboris. Fugiat consequat labore ut qui in enim sunt esse consequat tempor consectetur veniam. Duis excepteur sint nisi enim est aute commodo nisi commodo ad officia nostrud pariatur."
+                        "Accede a más de 100 piezas de contenido diseñadas específicamente para impulsar tu negocio. Desde estrategias de marketing y ventas hasta finanzas y más, nuestro equipo está actualizado con las técnicas más efectivas y modernas del mercado."
                     }
                     cta={"VER CONTENIDO"}
-                    imgUrl={"serv1.jpg"}
-                    bg={"#505784"}
+                    imgUrl={"serv2.webp"}
+                    bg={"blue"}
                 />
 
                 <Servicio
@@ -33,11 +34,11 @@ export default function Servicios() {
                     number={2}
                     title={"CONSULTAS Y GUIANZA"}
                     text={
-                        "Lorem esse mollit ad laboris. Fugiat consequat labore ut qui in enim sunt esse consequat tempor consectetur veniam. Duis excepteur sint nisi enim est aute commodo nisi commodo ad officia nostrud pariatur."
+                        "Conéctate con nuestros expertos para recibir asesoramiento y capacitación. Te ayudaremos a identificar tus retos y crear un plan de acción personalizado para que obtengas resultados efectivos en cualquier área de tu negocio."
                     }
                     cta={"AGENDAR LLAMADA"}
-                    imgUrl={"serv2.webp"}
-                    bg={"#EBEBEB"}
+                    imgUrl={"serv1.jpg"}
+                    bg={"light"}
                 />
 
                 <Servicio
@@ -46,41 +47,42 @@ export default function Servicios() {
                     title={
                         <>
                             {"SOFTWARE "}
-                            <Text
-                                // bgGradient="linear(to-r, #671ac5, #a081ff)"
-                                // bgClip="text"
-                                fontWeight={"800"}
-                                display={"inline"}
-                            >
+                            <Text as={"span"} fontWeight={"800"} display={"inline"}>
                                 VENTAJE
                             </Text>
                         </>
                     }
                     text={
-                        "Lorem esse mollit ad laboris. Fugiat consequat labore ut qui in enim sunt esse consequat tempor consectetur veniam. Duis excepteur sint nisi enim est aute commodo nisi commodo ad officia nostrud pariatur."
+                        <>
+                            {"La plataforma más avanzada del mercado inmobiliario. Con herramientas de automatización, centralización y un equipo dedicado, "}
+                            <Text as={"span"} fontWeight={"800"} display={"inline"}>
+                                Ventaje
+                            </Text>
+                            {" te permitirá lograr más con menos inversión. Una vez que lo pruebes, no querrás volver atrás."}
+                        </>
                     }
                     cta={"VER EL SOFTWARE"}
-                    imgUrl={"serv3.webp"}
-                    bg={"#505784"}
+                    imgUrl={"ventaje.png"}
+                    bg={"blue"}
                 />
             </VStack>
 
             {/* Beneficios  */}
             <HStack justify={"space-around"} my={"3rem"}>
                 <Beneficio
-                    icon={<BsSpeedometer />}
-                    title={"Beneficio 1"}
-                    text={"Ea nisi ut amet ea officia eu laborum dolore."}
+                    icon={<IoPeopleSharp />}
+                    title={"EQUIPO PERSONALIZAD"}
+                    text={"Te asignamos un equipo altamente capacitado de Merivilla Co."}
                 />
                 <Beneficio
-                    icon={<TbWorld />}
-                    title={"Beneficio 2"}
-                    text={"Ea nisi ut amet ea officia eu laborum dolore."}
+                    icon={<HiMiniArrowsPointingIn />}
+                    title={"ADMINISTRA"}
+                    text={"Todos los aspectos de tu negocio desde una plataforma centralizada en tiempo real."}
                 />
                 <Beneficio
-                    icon={<IoIosPeople />}
-                    title={"Beneficio 3"}
-                    text={"Ea nisi ut amet ea officia eu laborum dolore."}
+                    icon={<FaMoneyBillTrendUp />}
+                    title={"OPTIMIZA"}
+                    text={"Toma el control, reduce tus gastos, tiempo, y aun te daremos mas resultados."}
                 />
             </HStack>
         </SectionLayout>
@@ -135,7 +137,7 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg }) {
                 {...(direction == "right" ? { mr: "-4rem" } : { ml: "-4rem" })}
                 // mr={"-4rem"}
                 bgColor={bg}
-                color={bg == "#EBEBEB" ? "black" : "white"}
+                color={bg == "light" ? "black" : "white"}
                 w={"50%"}
                 py={"2rem"}
                 px={"2rem"}
@@ -154,7 +156,7 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg }) {
                 <Box
                     w={"100%"}
                     h={"100%"}
-                    bgColor={bg == "#EBEBEB" ? "#505784" : "#EBEBEB"}
+                    bgColor={bg == "light" ? "blue" : "light"}
                     opacity={0.65}
                 />
             </Box>
@@ -167,10 +169,10 @@ function Beneficio({ icon, title, text }) {
         <VStack>
             <Circle
                 mb={"1rem"}
-                borderWidth={"0.4rem"}
-                borderColor={"#505784"}
-                color={"#505784"}
-                padding={"1rem"}
+                borderWidth={"0.7rem"}
+                borderColor={"blue"}
+                color={"softBlue"}
+                padding={"2rem"}
                 fontSize={"5rem"}
             >
                 {icon}
