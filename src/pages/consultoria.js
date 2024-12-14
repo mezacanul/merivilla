@@ -1,9 +1,11 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import Expertos from "@/components/Consultoria/Expertos";
+import Hero from "@/components/Consultoria/Hero";
 
-export default function Consultoria(){
+export default function ContenidoEducativo() {
     return (
-        <Box bg={"blue"}>
-            <Heading>Consultoria</Heading>
-        </Box>
-    )
+        <>
+            <Hero/>
+            <Expertos/>
+        </>
+    );
 }

@@ -12,7 +12,7 @@ export default function SectionLayout({
 }) {
 
     return (
-        <Box bg={bg} py={py} color={color} position={"relative"}>
+        <Box bg={bg} py={py} color={color} position={"relative"} bgSize={"cover"}>
             {backdrop && (
                 <Box w={"100%"} h={"100%"}
                     position={"absolute"} top={0} left={0}

@@ -39,7 +39,7 @@ export default function Header({onOpen}) {
             position={"fixed"}
             width={"100vw"}
             bg={scrolling ? "#efefef" : "transparent"} // Transition between colors
-            color={scrolling || ((router.asPath) != "/") ? "black" : "white"} // Text color based on background
+            color={scrolling || (((router.asPath) != "/") && ((router.asPath) != "/blog")) ? "black" : "white"} // Text color based on background
             boxShadow={scrolling ? "lg" : "none"}
             transition="background-color 0.4s ease, box-shadow 0.3s ease"
         >

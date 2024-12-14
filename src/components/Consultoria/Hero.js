@@ -7,7 +7,7 @@ export default function Hero() {
             bg={"blue"}
             width="100vw"
             height="100vh"
-            backgroundImage="url('serv2.webp')"
+            backgroundImage="url('serv1-mirror.jpg')"
             backgroundSize="cover"
             align={"center"}
             position={"relative"}
@@ -23,11 +23,17 @@ export default function Hero() {
                 px={"8rem"}
             >
                 <Heading fontWeight={300} size={"4xl"} mb={"0.8rem"}>
-                    CAPACITACION Y CONOCIMIENTO
+                    CONSULTA CON NUESTROS EXPERTOS
                 </Heading>
-                <Text w={"70%"} fontSize={"1.8rem"} fontWeight={500} ml={"0.7rem"}>
-                    Aqui aprenderas cosas mucho antes que nadie, refinete con
-                    nuestro contenido y estaras adelante de tu competencia.
+                <Text
+                    w={"70%"}
+                    fontSize={"1.8rem"}
+                    fontWeight={500}
+                    ml={"0.7rem"}
+                >
+                    Consulta con nuestros expertos mas profesionales, calmados.
+                    ve sus perfiles para ver que ofrecen, unos te pueden ofrecer
+                    hasta certificados para tu empresa.
                 </Text>
             </VStack>
         </Flex>
