@@ -24,8 +24,8 @@ export default function DrawerMenu({isOpen, onClose}) {
 
                 <DrawerBody color={"black"}>
                     <VStack align={"flex-start"}>
-                        <CLink href={"#"}>Contenido Educativo</CLink>
-                        <CLink href={"#"}>Consultoria</CLink>
+                        <CLink href={"contenidoeducativo"}>Contenido Educativo</CLink>
+                        <CLink href={"consultoria"}>Consultoria</CLink>
                         <CLink href={"#"}>Quienes Somos</CLink>
                         <CLink href={"#"}>Contacto</CLink>
                         <CLink href={"#"}>
@@ -37,7 +37,7 @@ export default function DrawerMenu({isOpen, onClose}) {
                                 VENTAJE
                             </Text>
                         </CLink>
-                        <CLink href={"#"}>Blogs</CLink>
+                        <CLink href={"blog"}>Blogs</CLink>
                         <CLink href={"#"}>Iniciar Sesión</CLink>
                     </VStack>
                 </DrawerBody>

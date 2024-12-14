@@ -1,0 +1,50 @@
+[
+    {
+        "category": "Industry Insights",
+        "title": "The Future of SaaS: Trends to Watch in 2023",
+        "description": "Discover the latest trends in SaaS that are shaping the future of digital solutions and how your business can benefit.",
+        "author": "John Doe",
+        "date": "January 15, 2023",
+        "authorImg": "face1.jpg"
+    },
+    {
+        "category": "Business Growth",
+        "title": "Boost Your Business with Custom Software Solutions",
+        "description": "Learn how custom software solutions can streamline your operations and drive growth in your business.",
+        "author": "Jane Smith",
+        "date": "February 20, 2023",
+        "authorImg": "face1.jpg"
+    },
+    {
+        "category": "Case Studies",
+        "title": "Case Study: How We Helped XYZ Corp Increase Efficiency",
+        "description": "A detailed case study on how our digital solutions helped XYZ Corp improve their efficiency by 30%.",
+        "author": "Alice Johnson",
+        "date": "March 10, 2023",
+        "authorImg": "face1.jpg"
+    },
+    {
+        "category": "Industry Insights",
+        "title": "The Future of SaaS: Trends to Watch in 2023",
+        "description": "Discover the latest trends in SaaS that are shaping the future of digital solutions and how your business can benefit.",
+        "author": "John Doe",
+        "date": "January 15, 2023",
+        "authorImg": "face1.jpg"
+    },
+    {
+        "category": "Business Growth",
+        "title": "Boost Your Business with Custom Software Solutions",
+        "description": "Learn how custom software solutions can streamline your operations and drive growth in your business.",
+        "author": "Jane Smith",
+        "date": "February 20, 2023",
+        "authorImg": "face1.jpg"
+    },
+    {
+        "category": "Case Studies",
+        "title": "Case Study: How We Helped XYZ Corp Increase Efficiency",
+        "description": "A detailed case study on how our digital solutions helped XYZ Corp improve their efficiency by 30%.",
+        "author": "Alice Johnson",
+        "date": "March 10, 2023",
+        "authorImg": "face1.jpg"
+    }
+]
