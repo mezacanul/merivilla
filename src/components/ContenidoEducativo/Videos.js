@@ -11,7 +11,7 @@ export default function Videos() {
                     title={"5 METRICAS QUE DEBES ESTAR USANDO"}
                     category={"VENTAS Y MARKETING"}
                     date={"01/01/2025"}
-                    author={"Erick Góngora"}
+                    author={"John Doe"}
                     img={"serv1.jpg"}
                 />
 
@@ -19,7 +19,7 @@ export default function Videos() {
                     title={"5 METRICAS QUE DEBES ESTAR USANDO"}
                     category={"VENTAS Y MARKETING"}
                     date={"01/01/2025"}
-                    author={"Erick Góngora"}
+                    author={"John Doe"}
                     img={"serv1.jpg"}
                 />
 
@@ -27,7 +27,7 @@ export default function Videos() {
                     title={"5 METRICAS QUE DEBES ESTAR USANDO"}
                     category={"VENTAS Y MARKETING"}
                     date={"01/01/2025"}
-                    author={"Erick Góngora"}
+                    author={"John Doe"}
                     img={"serv1.jpg"}
                 />
             </HStack>

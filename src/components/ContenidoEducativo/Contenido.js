@@ -15,7 +15,7 @@ export default function Contenido() {
                             con nuestro contenido y estaras adelante de tu
                             competicion.`}
                         date={"01/01/2025"}
-                        author={"Erick Góngora"}
+                        author={"John Doe"}
                         img={"serv2.webp"}
                     />
                     
@@ -27,7 +27,7 @@ export default function Contenido() {
                             con nuestro contenido y estaras adelante de tu
                             competicion.`}
                         date={"01/01/2025"}
-                        author={"Erick Góngora"}
+                        author={"John Doe"}
                         img={"serv2.webp"}
                     />
                     
@@ -39,7 +39,7 @@ export default function Contenido() {
                             con nuestro contenido y estaras adelante de tu
                             competicion.`}
                         date={"01/01/2025"}
-                        author={"Erick Góngora"}
+                        author={"John Doe"}
                         img={"serv2.webp"}
                     />
                 </HStack>

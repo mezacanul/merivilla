@@ -213,7 +213,7 @@ function BlogCard({ blog, ...props }) {
                     </Text>
 
                     <Heading>{blog.title}</Heading>
-                    <Text className="desc-text" fontSize={"2xl"} mb={"2.5rem"} color={hexToRgba("#000000", 0.6)} transition="all 0.3s ease-in-out">
+                    <Text className="desc-text" fontSize={"xl"} mb={"2.5rem"} color={hexToRgba("#000000", 0.6)} transition="all 0.3s ease-in-out">
                         {blog.description}
                     </Text>
                 </VStack>

@@ -28,7 +28,7 @@ export default function Expertos() {
                 mt={"7rem"}
             >
                 <CardsContenido
-                    author={"JHON DOE"}
+                    author={"JOHN DOE"}
                     img={"face3.webp"}
                     title={"5 METRICAS QUE DEBES ESTAR USANDO"}
                     text={`Exercitation quis sunt sunt non ad excepteur est consectetur incididunt. Sit nostrud do excepteur duis aliquip pariatur aliqua laborum veniam cillum ad motiv.`}
@@ -36,7 +36,7 @@ export default function Expertos() {
                 />
 
                 <CardsContenido
-                    author={"JHON DOE"}
+                    author={"JOHN DOE"}
                     img={"face1.jpg"}
                     title={"5 METRICAS QUE DEBES ESTAR USANDO"}
                     text={`Exercitation quis sunt sunt non ad excepteur est consectetur incididunt. Sit nostrud do excepteur duis aliquip pariatur aliqua laborum veniam cillum ad motiv.`}
@@ -44,7 +44,7 @@ export default function Expertos() {
                 />
 
                 <CardsContenido
-                    author={"JHON DOE"}
+                    author={"JOHN DOE"}
                     img={"face.jpg"}
                     title={"5 METRICAS QUE DEBES ESTAR USANDO"}
                     text={`Exercitation quis sunt sunt non ad excepteur est consectetur incididunt. Sit nostrud do excepteur duis aliquip pariatur aliqua laborum veniam cillum ad motiv.`}
