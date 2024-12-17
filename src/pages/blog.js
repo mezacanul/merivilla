@@ -1,9 +1,9 @@
-import Hero from "@/components/Blog/Hero";
+// import Hero from "@/components/Blog/Hero";
 
 export default function Blog() {
     return (
         <>
-            <Hero/>
+            {/* <Hero/> */}
         </>
     );
 }
