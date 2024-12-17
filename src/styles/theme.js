@@ -22,6 +22,36 @@ const theme = extendTheme({
             },
         },
     },
+    components: {
+        Text: {
+          baseStyle: {
+            // fontSize: "md", // Default size for Text
+          },
+          sizes: {
+            sm: { fontSize: "18px" },
+            md: { fontSize: "24px" }, // Default when fontSize="md"
+            // lg: { fontSize: "30px" },
+            // xl: { fontSize: "24px" },
+          },
+          defaultProps: {
+            size: "md", // Set the default size
+          },
+        },
+        Heading: {
+          baseStyle: {
+            fontWeight: "400", // Default style for headings
+          },
+          sizes: {
+            sm: { fontSize: "34px" },
+            md: { fontSize: "40px" }, // Default when fontSize="md"
+            lg: { fontSize: "56px" },
+            xl: { fontSize: "72px" },
+          },
+          defaultProps: {
+            size: "lg", // Default size for headings
+          },
+        },
+    },
 });
 
 export default theme;

@@ -8,6 +8,7 @@ import {
     ring,
 } from "@chakra-ui/react";
 import GoldButton from "../common/GoldButton";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Hero() {
     return (
@@ -16,29 +17,35 @@ export default function Hero() {
 
             <Box zIndex={1}>
                 <Heading
-                    fontWeight={"200"}
-                    size={"4xl"}
                     mb={"1rem"}
                     width={"50vw"}
+                    fontWeight={"300"}
                 >
-                    <Text display={"inline"} fontWeight={600} size={"3xl"}>
+                    <Heading as={"b"} display={"inline"} fontWeight={600}>
                         EVOLUCIONA
-                    </Text>
+                    </Heading>
                     {" "}TU NEGOCIO INMOBILIARIO EN{" "}
-                    <Text display={"inline"} fontWeight={600} size={"3xl"}>
+                    <Heading as={"b"} display={"inline"} fontWeight={600}>
                         2025
-                    </Text>
+                    </Heading>
                 </Heading>
-                <Text fontSize={"2xl"} w={"45vw"} mb={"3rem"} fontWeight={"400"}>
+                <Text w={"45vw"} mb={"3rem"}>
                     Ante una industria competitiva en innovación constante,{" "}
-                    <Text fontWeight={600} as={"span"}>
+                    <Text as={"b"}>
                         Merivilla Co
                     </Text>{" "}
                     te ofrece las herramientas necesarias para no solo
                     adaptarse, sino estar adelante del mercado y llevar tu
                     negocio al siguiente nivel.
                 </Text>
-                <GoldButton fontSize={"xl"}>INSCRIBETE HOY</GoldButton>
+                <ScrollLink 
+                    to={"contacto"} 
+                    smooth={true}
+                    duration={700} // scroll duration in ms
+                    offset={-100} // offset for fixed headers
+                >
+                    <GoldButton>INSCRIBETE HOY</GoldButton>
+                </ScrollLink>
             </Box>
 
             <HStack
@@ -47,8 +54,8 @@ export default function Hero() {
             >
                 <Box {...styles.testimonialText}>
                     <Text
-                        fontSize={"xl"}
-                        fontWeight={800}
+                        as={"b"}
+                        size={"sm"}
                         w={"85%"}
                         margin={"auto"}
                     >
@@ -56,7 +63,7 @@ export default function Hero() {
                         será el más vendido en el municipio de Aldea Zamá,
                         Tulum."
                     </Text>
-                    <Text fontSize={"xl"} fontWeight={400} mt={"1rem"}>
+                    <Text size={"sm"} fontWeight={400} mt={"1rem"}>
                         CEO de DOGE
                     </Text>
                 </Box>

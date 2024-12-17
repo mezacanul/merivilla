@@ -59,18 +59,18 @@ export default function Expertos() {
 function CardsContenido({ author, img, title, text, cta }) {
     return (
         <VStack width={"32rem"} bg={"white"} color={"black"} py={"2rem"} px={"3rem"} boxShadow={"0px 1.5rem 20px rgba(0,0,0,0.3)"}>
-            <Text fontSize={"2xl"} mb={"1rem"}>{author}</Text>
+            <Text mb={"1rem"}>{author}</Text>
             <Circle
                 backgroundImage={`url('${img}')`}
                 p={"6rem"}
                 bgSize={"cover"}
                 mb={"1rem"}
             />
-            <Text as={"b"} fontSize={"3xl"} mb={"0.5rem"}>
+            <Text as={"b"} mb={"0.5rem"}>
                 {title}
             </Text>
-            <Text fontSize={"2xl"} mb={"2rem"}>{text}</Text>
-            <GoldButton fontSize={"xl"}>{cta}</GoldButton>
+            <Text size={"sm"} mb={"2rem"}>{text}</Text>
+            <GoldButton>{cta}</GoldButton>
         </VStack>
     );
 }

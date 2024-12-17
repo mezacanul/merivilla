@@ -12,23 +12,20 @@ export default function Footer() {
                 <HStack
                     justify={"center"}
                     spacing={"0.8rem"}
-                    fontSize={"1.5rem"}
                     mb={"2rem"}
                 >
-                    <Link href={"#"}>POLITICA DE PRIVACIDAD</Link>
+                    <Link href={"privacidad"}>POLITICA DE PRIVACIDAD</Link>
                     <Divider />
-                    <Link href={"#"}>TERMINOS DE USO</Link>
+                    <Link href={"uso"}>TERMINOS DE USO</Link>
                     <Divider />
-                    <Link href={"#"}>TRABAJO</Link>
+                    <Link href={"trabajo"}>TRABAJO</Link>
                     <Divider />
                     <Text
                         bgGradient="linear(to-r, #671ac5, #a081ff)"
                         bgClip="text"
-                        fontWeight={"800"}
+                        as={"b"}
                     >
-                        <Link href={"#"}>
-                            VENTAJE
-                        </Link>
+                        <Link href={"ventaje"}>VENTAJE</Link>
                     </Text>
                 </HStack>
                 {/* <Text fontSize={"0.9rem"} textAlign={"center"}>Merivilla 2024 ©</Text> */}

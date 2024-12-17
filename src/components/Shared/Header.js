@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { Flex, Box, Text } from "@chakra-ui/react";
+import { Flex, Box, Text, HStack } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useState, useEffect } from "react";
 
@@ -31,7 +31,6 @@ export default function Header({onOpen}) {
 
     return (
         <Flex
-            fontSize={"1.8rem"}
             zIndex={10}
             minH={"6rem"}
             alignItems={"center"}
@@ -39,7 +38,7 @@ export default function Header({onOpen}) {
             position={"fixed"}
             width={"100vw"}
             bg={scrolling ? "#efefef" : "transparent"} // Transition between colors
-            color={scrolling || (((router.asPath) != "/") && ((router.asPath) != "/blog")) ? "black" : "white"} // Text color based on background
+            color={scrolling || (((router.asPath) != "/") && ((router.asPath) != "/#contacto")) ? "black" : "white"} // Text color based on background
             boxShadow={scrolling ? "lg" : "none"}
             transition="background-color 0.4s ease, box-shadow 0.3s ease"
         >
@@ -49,10 +48,11 @@ export default function Header({onOpen}) {
                     {...LinkStyles("left")}
                     href="/"
                 >
-                    <Text display={"inline"} fontWeight={800}>
-                        MERIVILLA
-                    </Text>{" "}
-                    CO.
+                    <HStack align={"flex-end"} spacing={0}>
+                        <Text size={"md"} display={"inline"} fontWeight={800}>
+                            MERIVILLA.</Text>
+                        <Text size={"md"}>CO</Text>
+                    </HStack>
                 </Link>
 
                 <Box onClick={onOpen}>

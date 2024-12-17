@@ -22,13 +22,11 @@ export default function Hero() {
                 mt={"-8rem"}
                 px={"8rem"}
             >
-                <Heading fontWeight={300} size={"4xl"} mb={"0.8rem"}>
+                <Heading mb={"0.8rem"}>
                     CONSULTA CON NUESTROS EXPERTOS
                 </Heading>
                 <Text
                     w={"70%"}
-                    fontSize={"1.8rem"}
-                    fontWeight={500}
                     ml={"0.7rem"}
                 >
                     Consulta con nuestros expertos mas profesionales, calmados.

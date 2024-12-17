@@ -13,10 +13,10 @@ export default function QuienesSomos() {
                     spacing={"2rem"}
                     mr={"4rem"}
                 >
-                    <Heading size={"4xl"} fontWeight={400} textAlign={"center"}>
+                    <Heading textAlign={"center"}>
                         QUIENES SOMOS
                     </Heading>
-                    <Text fontSize={"1.4rem"} mb={"0.3rem"}>
+                    <Text mb={"0.3rem"}>
                         Desde Yucatán y Estados Unidos, con un conocimiento
                         profundo sobre el mercado inmobiliario, combinado con
                         una experiencia sólida en las más recientes innovaciones
@@ -25,13 +25,13 @@ export default function QuienesSomos() {
                         se unió para crear y ofrecer un valor excepcional a los
                         inmobiliarios.
                     </Text>
-                    <Text fontSize={"1.4rem"} mb={"0.5rem"}>
+                    <Text mb={"0.5rem"}>
                         <>
                             {`Un ambiente enfocado en la excelencia, complementado con
                             estrategias actualizadas, herramientas innovadoras que
                             pocos conocen y menos saben manejar, y una red de
                             expertos en todos los aspectos de la industria. `}
-                            <Text as={"span"} fontWeight={800} display={"inline"}>
+                            <Text as={"b"} display={"inline"}>
                                 Merivilla Co
                             </Text> 
                             {` está aquí para transformar negocios
@@ -39,7 +39,7 @@ export default function QuienesSomos() {
                         </>
                     </Text>
 
-                    <GoldButton fontSize={"lg"}>SOBRE NOSOTROS</GoldButton>
+                    <GoldButton href={"nosotros"}>SOBRE NOSOTROS</GoldButton>
                 </VStack>
 
                 <Box

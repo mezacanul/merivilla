@@ -9,10 +9,11 @@ export default function SectionLayout({
     backdrop,
     backdropColor,
     backdropOpacity,
+    ...props
 }) {
 
     return (
-        <Box bg={bg} py={py} color={color} position={"relative"} bgSize={"cover"}>
+        <Box bg={bg} py={py} color={color} position={"relative"} bgSize={"cover"} {...props}>
             {backdrop && (
                 <Box w={"100%"} h={"100%"}
                     position={"absolute"} top={0} left={0}

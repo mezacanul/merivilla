@@ -12,7 +12,7 @@ export default function Servicios() {
     return (
         <>
             <SectionLayout maxW={"container.lg"} color={"black"} py={"4rem"}>
-                <Heading size={"3xl"} textAlign={"center"} fontWeight={500}>
+                <Heading textAlign={"center"} >
                     COMO TE AYUDAMOS
                 </Heading>
 
@@ -50,7 +50,7 @@ export default function Servicios() {
                         title={
                             <>
                                 {"SOFTWARE "}
-                                <Text as={"span"} fontWeight={"800"} display={"inline"}>
+                                <Text as={"b"} display={"inline"}>
                                     VENTAJE
                                 </Text>
                             </>
@@ -58,7 +58,7 @@ export default function Servicios() {
                         text={
                             <>
                                 {"La plataforma más avanzada del mercado inmobiliario. Con herramientas de automatización, centralización y un equipo dedicado, "}
-                                <Text as={"span"} fontWeight={"800"} display={"inline"}>
+                                <Text size={"sm"} as={"b"} display={"inline"}>
                                     Ventaje
                                 </Text>
                                 {" te permitirá lograr más con menos inversión. Una vez que lo pruebes, no querrás volver atrás."}
@@ -92,7 +92,7 @@ export default function Servicios() {
             </SectionLayout>
 
             {/* Beneficios  */}
-            <Container maxW={"container.xl"} color={"black"} mt={"-8rem"} mb={"4rem"}>
+            <Container maxW={"container.xl"} color={"black"} mt={"-8rem"} mb={"7rem"}>
                 <HStack justify={"space-around"} my={"3rem"} align={"flex-start"}>
                     <Beneficio
                         icon={<IoPeopleSharp />}
@@ -142,8 +142,8 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
     return (
         <HStack justify={"center"} position={"relative"} flexDir={flexDir}>
             <Heading
-                size={"4xl"}
-                fontWeight={800}
+                size={"xl"}
+                fontWeight={"bold"}
                 position={"absolute"}
                 top={"-3.5rem"}
                 {...(direction == "right" ? { left: 0 } : { right: 0 })}
@@ -171,10 +171,10 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
                 py={"3.5rem"}
                 px={"2rem"}
             >
-                <Heading fontSize={"2xl"} fontWeight={500} mb={"0.7rem"}>
+                <Text mb={"0.7rem"}>
                     {title}
-                </Heading>
-                <Text fontSize={"lg"} textAlign={"center"} mb={"0.5rem"}>
+                </Text>
+                <Text size={"sm"} textAlign={"center"} mb={"0.5rem"}>
                     {text}
                 </Text>
                 <LinkButton fontSize={"lg"} href={href}>{cta}</LinkButton>
@@ -195,7 +195,7 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
 
 function Beneficio({ icon, title, text }) {
     return (
-        <VStack w={"30%"}>
+        <VStack w={"33%"}>
             <Circle
                 mb={"1rem"}
                 // borderWidth={"0.7rem"}
@@ -207,10 +207,10 @@ function Beneficio({ icon, title, text }) {
             >
                 {icon}
             </Circle>
-            <Heading fontSize="2xl" textAlign={"center"} width={"80%"} mb={"0.6rem"}>
+            <Text as={"b"} textAlign={"center"} width={"80%"} mb={"0.6rem"}>
                 {title}
-            </Heading>
-            <Text fontSize="xl" textAlign={"center"} width={"75%"}>
+            </Text>
+            <Text size={"sm"} textAlign={"center"} width={"75%"}>
                 {text}
             </Text>
         </VStack>

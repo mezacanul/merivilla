@@ -12,7 +12,7 @@ export default function Hero() {
             align={"center"}
             position={"relative"}
         >
-            <Overlay color={"light"} />
+            <Overlay color={"light"}/>
 
             <VStack
                 align={"flex-start"}
@@ -22,10 +22,10 @@ export default function Hero() {
                 mt={"-8rem"}
                 px={"8rem"}
             >
-                <Heading fontWeight={300} size={"4xl"} mb={"0.8rem"}>
+                <Heading mb={"0.8rem"}>
                     CAPACITACION Y CONOCIMIENTO
                 </Heading>
-                <Text w={"70%"} fontSize={"1.8rem"} fontWeight={500} ml={"0.7rem"}>
+                <Text w={"70%"} ml={"0.7rem"}>
                     Aqui aprenderas cosas mucho antes que nadie, refinete con
                     nuestro contenido y estaras adelante de tu competencia.
                 </Text>

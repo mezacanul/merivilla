@@ -10,11 +10,11 @@ export default function Testimoniales() {
             py="6rem"
             maxW={"85%"}
         >
-            <Heading size={"4xl"} textAlign={"center"} fontWeight={400}>
+            <Heading textAlign={"center"}>
                 TESTIMONIALES
             </Heading>
 
-            <HStack my={"4rem"} justify={"space-between"} align={"stretch"}>
+            <HStack my={"6rem"} justify={"space-between"} align={"stretch"}>
                 <Testimonial
                     image={"url('/face1.jpg')"}
                     text={
@@ -74,13 +74,13 @@ function Testimonial({ image, text, name }) {
                         backgroundSize={"cover"}
                         boxShadow={"0px 5px 10px rgba(39, 39, 39, 0.3)"}
                     />
-                    <Text width={"80%"} fontWeight={"800"} fontSize={"lg"} mb={"0.5rem"}>
+                    <Text width={"80%"} as={"b"} size={"sm"} mb={"0.5rem"}>
                         {text}
                     </Text>
                 </VStack>
-                <Heading fontSize="xl" fontWeight={400}>
+                <Text size={"sm"}>
                     {name}
-                </Heading>
+                </Text>
             </VStack>
         // </Box>
     );

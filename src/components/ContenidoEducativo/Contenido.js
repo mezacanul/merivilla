@@ -50,18 +50,18 @@ export default function Contenido() {
 
 function CardsContenido({title, subtitle, subtitleColor, text, date, author, img}) {
     return (
-        <VStack width={"36rem"} align={"center"}>
+        <VStack width={"31rem"} align={"center"}>
             {/* Image Box  */}
             <Box
                 // backgroundImage="url('serv2.webp')"
                 backgroundImage={`url('${img}')`}
                 backgroundSize="cover"
                 position={"relative"}
-                h={"32rem"}
+                h={"28rem"}
                 p={"2rem"}
             >
                 <Overlay color={"light"} />
-                <Heading color={"black"} position={"relative"} size={"2xl"}>
+                <Heading fontWeight={"bold"} size={"md"} color={"black"} position={"relative"}>
                     {title}
                 </Heading>
             </Box>
@@ -79,16 +79,16 @@ function CardsContenido({title, subtitle, subtitleColor, text, date, author, img
                 boxShadow={"0px 1.5rem 20px rgba(0,0,0,0.3)"}
             >
                 <VStack mb={"3rem"}>
-                    <Text fontSize={"2xl"} as={"b"} color={subtitleColor}>{subtitle}</Text>
-                    <Text fontSize={"xl"}>
+                    <Text as={"b"} color={subtitleColor}>{subtitle}</Text>
+                    <Text size={"sm"}>
                         {text}
                     </Text>
                 </VStack>
 
                 {/* Footer  */}
-                <HStack w={"100%"} justify={"space-between"} fontSize={"2xl"}>
-                    <Text as="b">{date}</Text>
-                    <Text as="b">{author}</Text>
+                <HStack w={"100%"} justify={"space-between"} fontSize={"xl"}>
+                    <Text as="b" size={"sm"}>{date}</Text>
+                    <Text as="b" size={"sm"}>{author}</Text>
                 </HStack>
             </VStack>
         </VStack>

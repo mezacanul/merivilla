@@ -41,7 +41,7 @@ function VideoCards({ title, category, date, author, img }) {
             position={"relative"}
             py={"2rem"}
             px={"2rem"}
-            w={"35rem"}
+            w={"32rem"}
             bg={`url('${img}')`}
             bgSize={"cover"}
             boxShadow={"0px 1.5rem 20px rgba(0,0,0,0.3)"}
@@ -54,8 +54,8 @@ function VideoCards({ title, category, date, author, img }) {
                 h={"28rem"}
             >
                 <VStack align={"flex-start"}>
-                    <Heading size={"2xl"}>{title}</Heading>
-                    <Text fontSize={"xl"}>{category}</Text>
+                    <Heading fontWeight={"bold"} size={"md"}>{title}</Heading>
+                    <Text size={"sm"}>{category}</Text>
                 </VStack>
 
                 <HStack
@@ -72,13 +72,13 @@ function VideoCards({ title, category, date, author, img }) {
                             mr={"0.3rem"}
                         >
                             <PiCrownSimpleFill
-                                fontSize={"2rem"}
+                                fontSize={"1.5rem"}
                                 color="white"
                             />
                         </Circle>
-                        <Text as={"b"}>{date}</Text>
+                        <Text size={"sm"} as={"b"}>{date}</Text>
                     </HStack>
-                    <Text as={"b"}>{author}</Text>
+                    <Text size={"sm"} as={"b"}>{author}</Text>
                 </HStack>
             </VStack>
         </VStack>

@@ -1,4 +1,4 @@
-import { HStack, VStack } from "@chakra-ui/react";
+import { Heading, HStack, VStack } from "@chakra-ui/react";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { MdArrowRightAlt } from "react-icons/md";
 import { Box, Text } from "@chakra-ui/react";
@@ -13,32 +13,48 @@ import {
     DrawerCloseButton,
     useDisclosure,
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { scroller } from "react-scroll";
+import { useEffect } from "react";
 
 export default function DrawerMenu({isOpen, onClose}) {
+    const router = useRouter();
+
+    useEffect(()=>{
+        if(router.asPath == "/#contacto"){
+            scroller.scrollTo("contacto", {
+                duration: 500,
+                smooth: true,
+                offset: -100, // Adjust this value for the offset
+            });
+            console.log("contacto id");
+        }
+    }, [])
+
     return (
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"sm"}>
             <DrawerOverlay />
-            <DrawerContent color={"black"}>
-                <DrawerCloseButton />
-                <DrawerHeader mt={"1.5rem"} fontWeight={800} fontSize={"1.5rem"}>MERIVILLA</DrawerHeader>
+            <DrawerContent color={"black"} px={"1.5rem"}>
+                <DrawerCloseButton m={"0.5rem"} />
+                <DrawerHeader fontSize={"2.2rem"} mt={"2rem"} mb={"0.5rem"}>MERIVILLA</DrawerHeader>
 
                 <DrawerBody color={"black"}>
                     <VStack align={"flex-start"}>
                         <CLink href={"contenidoeducativo"}>Contenido Educativo</CLink>
                         <CLink href={"consultoria"}>Consultoria</CLink>
-                        <CLink href={"#"}>Quienes Somos</CLink>
-                        <CLink href={"#"}>Contacto</CLink>
-                        <CLink href={"#"}>
+                        <CLink href={"nosotros"}>Quienes Somos</CLink>
+                        <CLink href={"/#contacto"}>Contacto</CLink>
+                        <CLink href={"ventaje"}>
                             <Text
                                 bgGradient="linear(45deg, #671ac5, #a081ff)"
                                 bgClip="text"
-                                fontWeight={"800"}
+                                as={"b"}
+                                size={"sm"}
                             >
                                 VENTAJE
                             </Text>
                         </CLink>
-                        <CLink href={"blog"}>Blogs</CLink>
-                        <CLink href={"#"}>Iniciar Sesión</CLink>
+                        <CLink href={"login"}>Iniciar Sesión</CLink>
                     </VStack>
                 </DrawerBody>
             </DrawerContent>
@@ -84,7 +100,9 @@ function CLink({ children, href }) {
                     fontWeight: 800
                 }}
             >
-                {children}
+                <Text size={"sm"}>
+                    {children}
+                </Text>
             </ChakraLink>
         </HStack>
     );

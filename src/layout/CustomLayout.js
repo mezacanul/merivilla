@@ -1,5 +1,5 @@
 import hexToRgba from "@/utils/hexToRgba";
-import { Box, Container, Flex, Heading, HStack } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, HStack, Text } from "@chakra-ui/react";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
@@ -23,15 +23,13 @@ export default function CustomLayout({ children, title, bg, maxW = "80%", arrows
             <Container maxW={maxW} py={"5rem"}>
                 <HStack justify={"space-between"} width={"80%"} m={"auto"}>
                     <HStack justify={"center"}>
-                        <Heading mb={"-0.1rem"} fontSize={"1.5rem"}>
+                        <Text mb={"-0.1rem"}>
                             CATEGORIA
-                        </Heading>
+                        </Text>
                         <BiSolidDownArrow fontSize={"1.5rem"} />
                     </HStack>
 
                     <Heading
-                        size={"3xl"}
-                        fontWeight={300}
                         display={"flex"}
                         alignItems={"center"}
                     >
@@ -39,9 +37,9 @@ export default function CustomLayout({ children, title, bg, maxW = "80%", arrows
                     </Heading>
 
                     <HStack justify={"center"}>
-                        <Heading mb={"-0.1rem"} fontSize={"1.5rem"}>
+                        <Text mb={"-0.1rem"}>
                             FILTRO
-                        </Heading>
+                        </Text>
                         <GiHamburgerMenu fontSize={"1.5rem"} />
                     </HStack>
                 </HStack>
