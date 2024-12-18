@@ -9,6 +9,7 @@ import {
     HStack,
     Circle,
     SimpleGrid,
+    Container,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -93,40 +94,48 @@ function MainBlog({
     author,
     date,
     imgAuthor,
+    text,
     ...props
 }) {
     return (
-        <VStack px={"5rem"} align={"flex-start"} {...props}>
+        <VStack align={"flex-start"} {...props} minH={"60vh"}>
             <Image
                 src={img}
-                h={"45rem"}
+                h={"40rem"}
                 w={"100%"}
                 m={"auto"}
                 objectFit={"cover"}
             />
 
-            <VStack color={"black"} align={"flex-start"} py={"2rem"}>
-                <Text
-                    mb={"0.5rem"}
-                    color={"rgb(66, 146, 136)"}
-                    as={"b"}
-                    fontSize={"xl"}
-                >
-                    {category}
-                </Text>
-                <Heading mb={"0.7rem"} size={"2xl"}>
-                    {title}
-                </Heading>
-                <Text color={"dark"} mb={"1.2rem"} fontSize={"2xl"}>
-                    {description}
-                </Text>
+            <Container maxW={"90%"}>
 
-                <BlogAuthorIcon
-                    author={author}
-                    date={date}
-                    imgAuthor={imgAuthor}
-                />
-            </VStack>
+                <VStack color={"black"} align={"flex-start"} py={"2rem"} w={"70%"}>
+                    <Text
+                        mb={"2rem"}
+                        color={"rgb(66, 146, 136)"}
+                        as={"b"}
+                        size={"sm"}
+                    >
+                        {category}
+                    </Text>
+                    <Heading mb={"1.5rem"} size={"lg"}>
+                        {title}
+                    </Heading>
+                    <Text color={"dark"} mb={"2rem"} size={"sm"}>
+                        {description}
+                    </Text>
+
+                    <BlogAuthorIcon
+                        author={author}
+                        date={date}
+                        imgAuthor={imgAuthor}
+                    />
+                </VStack>
+
+                <Text color={"black"} mt={"4rem"} mb={"8rem"} whiteSpace="pre-wrap">
+                    {text}
+                </Text>
+            </Container>
         </VStack>
     );
 }
@@ -135,17 +144,17 @@ function BlogAuthorIcon({ author, date, imgAuthor }) {
     return (
         <HStack>
             <Circle
-                p={"2rem"}
+                p={"1.6rem"}
                 bgImage={imgAuthor}
                 bgSize={"cover"}
                 me={"0.5rem"}
             />
 
             <VStack align={"self-start"} spacing={0}>
-                <Text fontSize={"xl"} as={"b"}>
+                <Text size={"sm"} as={"b"}>
                     {author}
                 </Text>
-                <Text fontSize={"xl"}>
+                <Text size={"sm"}>
                     {date}
                 </Text>
             </VStack>
@@ -153,18 +162,16 @@ function BlogAuthorIcon({ author, date, imgAuthor }) {
     );
 }
 
-function BlogsGrid({ blogsData }) {
+function BlogsGrid({ blogsData, py }) {
     return (
         // <Flex justify={"center"}>
         <SimpleGrid
             color={"black"}
             columns={[1, 2, 3]}
-            px={"5rem"}
             justifyItems="center"
             spacing={"3rem"}
             spacingY={"5rem"}
-            pt={"7rem"}
-            pb={"10rem"}
+            py={py}
         >
             {blogsData.map((blog, index) => {
                 const alignment =
@@ -199,7 +206,7 @@ function BlogCard({ blog, ...props }) {
         >
             <Image src="merida.jpg" />
 
-            <VStack px={"2rem"} py={"1.5rem"} align={"flex-start"}>
+            <VStack px={"2.5rem"} py={"1.5rem"} align={"flex-start"}>
                 <VStack align={"flex-start"}>
                     <Text
                         className="category"
@@ -207,13 +214,13 @@ function BlogCard({ blog, ...props }) {
                         mb={"1rem"}
                         color={"rgb(66, 146, 136)"}
                         as={"b"}
-                        fontSize={"xl"}
+                        size={"sm"}
                     >
                         {blog.category}
                     </Text>
 
-                    <Heading>{blog.title}</Heading>
-                    <Text className="desc-text" fontSize={"xl"} mb={"2.5rem"} color={hexToRgba("#000000", 0.6)} transition="all 0.3s ease-in-out">
+                    <Text size={"lg"} lineHeight={"1.3"}>{blog.title}</Text>
+                    <Text className="desc-text" size={"sm"} mb={"1.5rem"} color={hexToRgba("#000000", 0.6)} transition="all 0.3s ease-in-out">
                         {blog.description}
                     </Text>
                 </VStack>
@@ -227,3 +234,5 @@ function BlogCard({ blog, ...props }) {
         </VStack>
     );
 }
+
+export { MainBlog, BlogAuthorIcon, BlogCard, BlogsGrid }

@@ -12,7 +12,11 @@ const theme = extendTheme({
         light: "#D9D9D9",
         white: "#FFFFFF",
         blue: "#66738D",
-        softBlue: "#8a97ad"
+        softBlue: "#8a97ad",
+        gold: "linear(45deg, #9c6a07 0%,#dbb262 100%)",
+        gradients: {
+          gold: "linear(45deg, #9c6a07 0%,#dbb262 100%)",
+        }
     },
     styles: {
         global: {
@@ -23,6 +27,11 @@ const theme = extendTheme({
         },
     },
     components: {
+        Dashboard: {
+          baseStyle: {
+            color: "black", // Default text color for the Dashboard
+          },
+        },
         Text: {
           baseStyle: {
             // fontSize: "md", // Default size for Text
@@ -30,7 +39,7 @@ const theme = extendTheme({
           sizes: {
             sm: { fontSize: "18px" },
             md: { fontSize: "24px" }, // Default when fontSize="md"
-            // lg: { fontSize: "30px" },
+            lg: { fontSize: "32px" },
             // xl: { fontSize: "24px" },
           },
           defaultProps: {
