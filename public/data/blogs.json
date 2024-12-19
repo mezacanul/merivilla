@@ -14,7 +14,7 @@
         "description": "Análisis completo del crecimiento inmobiliario en el norte de Mérida y las oportunidades que ofrece para inversionistas.",
         "author": "Ana Ramírez",
         "date": "20 de febrero, 2024",
-        "authorImg": "face1.jpg",
+        "authorImg": "author1.jpeg",
         "img": "blog.jpg"
     },
     {
@@ -23,7 +23,7 @@
         "description": "Conoce cómo una propiedad colonial se transformó en un exitoso hotel boutique en el corazón de Mérida.",
         "author": "Luis Torres",
         "date": "10 de marzo, 2024",
-        "authorImg": "face1.jpg",
+        "authorImg": "author4.jpg",
         "img": "blog2.webp"
     },
     {
@@ -32,7 +32,7 @@
         "description": "Todo lo que necesitas saber sobre los precios actuales en las diferentes zonas de Mérida y sus tendencias.",
         "author": "María González",
         "date": "5 de abril, 2024",
-        "authorImg": "face1.jpg",
+        "authorImg": "author2.jpg",
         "img": "blog.webp"
     },
     {
@@ -41,7 +41,7 @@
         "description": "Por qué cada vez más personas eligen Mérida para vivir y cómo esto impacta el mercado inmobiliario local.",
         "author": "Roberto Díaz",
         "date": "12 de mayo, 2024",
-        "authorImg": "face1.jpg",
+        "authorImg": "author5.jpg",
         "img": "blog4.jpeg"
     },
     {
@@ -50,7 +50,7 @@
         "description": "Análisis de los próximos desarrollos residenciales y comerciales que transformarán el paisaje urbano de Mérida.",
         "author": "Patricia Solís",
         "date": "1 de junio, 2024",
-        "authorImg": "face1.jpg",
+        "authorImg": "author3.jpg",
         "img": "blog2.jpg"
     }
 ]

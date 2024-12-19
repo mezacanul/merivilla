@@ -3,8 +3,8 @@ import { Text, Box, Button, Collapse, HStack } from "@chakra-ui/react";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
 
-export default function Collapsible({ title, children, w }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Collapsible({ title, children, w, type = "default"}) {
+  const [isOpen, setIsOpen] = useState((type == "default") ? false : true);
 
   const toggle = () => setIsOpen(!isOpen);
 

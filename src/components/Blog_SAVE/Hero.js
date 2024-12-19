@@ -12,6 +12,7 @@ import {
     Container,
 } from "@chakra-ui/react";
 import axios from "axios";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -182,7 +183,7 @@ function BlogsGrid({ blogsData, py }) {
                         ? "center" // 2nd column
                         : "end"; // 3rd column
 
-                return <BlogCard blog={blog} justifySelf={alignment} />;
+                return <BlogCard blog={blog} justifySelf={alignment} key={blog.title}/>;
             })}
         </SimpleGrid>
         // </Flex>
@@ -192,6 +193,8 @@ function BlogsGrid({ blogsData, py }) {
 function BlogCard({ blog, ...props }) {
     return (
         <VStack
+            as={Link}
+            href={"/blog"}
             {...props}
             align={"self-start"}
             _hover={{
@@ -205,7 +208,7 @@ function BlogCard({ blog, ...props }) {
             }}
             transition="all 0.3s ease-in-out"
         >
-            <Image src="merida.jpg" />
+            <Image h={"16rem"} w={"100%"} objectFit={"cover"} src={blog.img}/>
 
             <VStack px={"2.5rem"} py={"1.5rem"} align={"flex-start"}>
                 <VStack align={"flex-start"}>

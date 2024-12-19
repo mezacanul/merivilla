@@ -37,7 +37,7 @@ export default function Index() {
         <Box w={"100vw"} minH={"87vh"} py={"10rem"} color={"black"}>
             <Container maxW={"90%"}>
                 {/* Bienvenida */}
-                <Box mb={"4rem"}>
+                <Box mb={"3rem"}>
                     <Heading mb={"1rem"} size={"lg"}>Bienvenido Usuario!</Heading>
                     <Text size={"sm"}>
                         {"Aquí podrás configurar tu perfil"}
@@ -47,8 +47,10 @@ export default function Index() {
                     </Text>
                 </Box>
 
+                {/* <GoldButton mb={"3rem"} href={"/contenidoeducativo/post/nuevo"}>Crear Nuevo Blog</GoldButton> */}
+
                 {/* Content  */}
-                <VStack align={"flex-start"} spacing={"3rem"}>
+                <VStack align={"flex-start"} spacing={"1rem"}>
                     
                     {/* Perfil  */}
                     <Collapsible w={"50%"} title={<Heading size={"md"}>Mi perfil</Heading>}>
@@ -61,15 +63,15 @@ export default function Index() {
                             <BlogList/>
                         </Collapsible>
                     )}
-
-                    {/* Mis blogs  */}
+                    
+                    {/* Mis blogs favoritos  */}
                     {role == "creador" && (
-                        <Collapsible title={<Heading size={"md"}>Mis blogs favoritos</Heading>}>
+                        <Collapsible type={"favoritos"} title={<Heading size={"md"}>Blogs favoritos</Heading>}>
                             <BlogFavs blogsData={blogsData}/>
                         </Collapsible>
                     )}
 
-                    <GoldButton href={"/contenidoeducativo/post/nuevo"}>Crear Nuevo Blog</GoldButton>
+                    {/* <GoldButton href={"/contenidoeducativo/post/nuevo"}>Crear Nuevo Blog</GoldButton> */}
 
                 </VStack>
             </Container>
@@ -79,44 +81,48 @@ export default function Index() {
 
 function BlogList(){  
     return (
-        <TableContainer w={"100%"} ml={"-1rem"}>
-            <Table variant="simple" w={"100%"}>
-                <Thead bg={"blue"}>
-                    <Tr>
-                        <Th color={"white"} fontSize="lg">Blog</Th>
-                        <Th color={"white"} fontSize="lg">Categoría</Th>
-                        <Th color={"white"} fontSize="lg"></Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    {items.map((item) => (
-                    <Tr key={item.id} _hover={{bg: "light"}} transition={"all 0.1s"} fontSize={"xl"}>
-                        <Td>
-                            <ChakraLink as={Link} href="#">
-                                {item.name}
-                            </ChakraLink>
-                        </Td>
-                        <Td>{item.category}</Td>
-                        <Td textAlign={"right"} fontSize={"2xl"}>
-                            <HStack spacing={3} justify={"space-between"}>
-                                <IconStyled icon={<RiEditBoxLine/>}/>
+        <>
+            <GoldButton mb={"2rem"} href={"/contenidoeducativo/post/nuevo"}>Crear Nuevo Blog</GoldButton>
 
-                                <HStack>
-                                    <IconStyled icon={<AiOutlineStock/>}/>
-                                    <Text fontSize={"sm"}>{item.views}</Text>
-                                </HStack>
+            <TableContainer w={"100%"} ml={"-1rem"}>
+                <Table variant="simple" w={"100%"}>
+                    <Thead bg={"blue"}>
+                        <Tr>
+                            <Th color={"white"} fontSize="lg">Blog</Th>
+                            <Th color={"white"} fontSize="lg">Categoría</Th>
+                            <Th color={"white"} fontSize="lg"></Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {items.map((item) => (
+                        <Tr key={item.id} _hover={{bg: "light"}} transition={"all 0.1s"} fontSize={"xl"}>
+                            <Td>
+                                <ChakraLink as={Link} href="#">
+                                    {item.name}
+                                </ChakraLink>
+                            </Td>
+                            <Td>{item.category}</Td>
+                            <Td textAlign={"right"} fontSize={"2xl"}>
+                                <HStack spacing={3} justify={"space-between"}>
+                                    <IconStyled icon={<RiEditBoxLine/>}/>
 
-                                <HStack>
-                                    <IconStyled icon={<FaStar/>}/>
-                                    <Text fontSize={"sm"}>{item.fav}</Text>
+                                    <HStack>
+                                        <IconStyled icon={<AiOutlineStock/>}/>
+                                        <Text fontSize={"sm"}>{item.views}</Text>
+                                    </HStack>
+
+                                    <HStack>
+                                        <IconStyled icon={<FaStar/>}/>
+                                        <Text fontSize={"sm"}>{item.fav}</Text>
+                                    </HStack>
                                 </HStack>
-                            </HStack>
-                        </Td>
-                    </Tr>
-                    ))}
-                </Tbody>
-            </Table>
-        </TableContainer>
+                            </Td>
+                        </Tr>
+                        ))}
+                    </Tbody>
+                </Table>
+            </TableContainer>
+        </>
     )
 }
 
