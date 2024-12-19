@@ -1,3 +1,6 @@
+import { addBlock, deleteBlock, updateBlocks } from "@/store/slices/blocksSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 import "react-quill/dist/quill.snow.css";
 import { MainBlog } from "@/components/Blog_SAVE/Hero";
 import axios from "axios";
@@ -34,11 +37,12 @@ import { arrayMove } from "@dnd-kit/sortable";
 import DragArea from "@/components/common/DragArea";
 import { useState, useEffect } from "react";
 import DraggableItem from "@/components/common/DraggableItem";
+import scaleEffect from "@/utils/scaleEffect";
 
 const data = [
-    { id: 1, type: "heading" },
-    { id: 2, type: "text" },
-    { id: 3, type: "image" },
+    // { id: 1, type: "heading" },
+    // { id: 2, type: "text" },
+    // { id: 3, type: "image" },
 ];
 
 const customShadow = { boxShadow: `0px 1px 4px ${hexToRgba("#000000", 0.4)}` };
@@ -87,15 +91,32 @@ const FullscreenModal = ({ isOpen, onClose }) => {
     }, []);
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} size={"50rem"} closeOnOverlayClick={true}>
+        <Modal
+            isOpen={isOpen}
+            onClose={onClose}
+            size={"50rem"}
+            closeOnOverlayClick={true}
+        >
             <ModalOverlay />
             <ModalContent bg={"transparent"} mx={"5rem"} boxShadow={"none"}>
                 {/* <ModalHeader>Fullscreen Modal</ModalHeader> */}
-                <ModalCloseButton color={"white"} mx={"8rem"} fontSize={"1.5rem"}/>
-                
+                <ModalCloseButton
+                    color={"white"}
+                    mx={"8rem"}
+                    fontSize={"1.5rem"}
+                />
+
                 <ModalBody h={"100%"} py={"0"}>
-                    
-                    <Box {...customShadow} borderRadius={"2rem"} color={"black"} h={"85vh"} w={"80%"} m={"auto"} overflow={"scroll"} bg={"white"}>
+                    <Box
+                        {...customShadow}
+                        borderRadius={"2rem"}
+                        color={"black"}
+                        h={"85vh"}
+                        w={"80%"}
+                        m={"auto"}
+                        overflow={"scroll"}
+                        bg={"white"}
+                    >
                         <MainBlog
                             img={blogData.img}
                             category={blogData.category}
@@ -108,16 +129,26 @@ const FullscreenModal = ({ isOpen, onClose }) => {
                             preview={true}
                         />
                     </Box>
-
                 </ModalBody>
-                <ModalFooter>
-          </ModalFooter>
+                <ModalFooter></ModalFooter>
             </ModalContent>
         </Modal>
     );
 };
 
 function BlogBlocks({ w }) {
+    const dispatch = useDispatch();
+
+    const handleAddBlock = (type) => {
+        const newBlock = {
+            id: Date.now(), // Generate unique id
+            type: type,
+            content: ""
+        }
+        // console.log(newBlock);
+        dispatch(addBlock(newBlock));
+    }
+
     return (
         <VStack w={w} align={"flex-start"}>
             <Text fontWeight={"bold"} size={"lg"}>
@@ -132,10 +163,30 @@ function BlogBlocks({ w }) {
                 borderBottom={`1px solid ${hexToRgba("#000000", 0.4)}`}
                 pb={"2rem"}
             >
-                <Block name={"Heading"} icon={<RxText />} />
-                <Block name={"Text"} icon={<RxTextAlignLeft />} />
-                <Block name={"Image"} icon={<IoImageOutline />} />
-                <Block name={"Youtube Video"} icon={<FiYoutube />} />
+                <AddBlockBtn
+                    name={"Heading"}
+                    type={"heading"}
+                    icon={<RxText />}
+                    onClick={() => handleAddBlock("heading")}
+                />
+                <AddBlockBtn
+                    name={"Text"}
+                    type={"text"}
+                    icon={<RxTextAlignLeft />}
+                    onClick={() => handleAddBlock("text")}
+                />
+                <AddBlockBtn
+                    name={"Image"}
+                    type={"image"}
+                    icon={<IoImageOutline />}
+                    onClick={() => handleAddBlock("image")}
+                />
+                <AddBlockBtn
+                    name={"Youtube Video"}
+                    type={"link"}
+                    icon={<FiYoutube />}
+                    onClick={() => handleAddBlock("link")}
+                />
             </VStack>
 
             {/* Cover Image  */}
@@ -190,25 +241,28 @@ function BlogBlocks({ w }) {
     );
 }
 
-const scaleEffect = {
-    _hover: {
-        transform: "scale(1.04)",
-        cursor: "pointer",
-    },
-    transition: "all 0.3s",
-};
+function AddBlockBtn({ name, icon, type, onClick }) {
+    const handleClick = (e) => {
+        e.preventDefault();
+        onClick();
+    }
 
-function Block({ name, icon }) {
     return (
         <HStack
+            as={"button"}
             {...scaleEffect}
             {...customShadow}
             w={"100%"}
             p={"5"}
             borderRadius={"1rem"}
+            justify={"space-between"}
+            onClick={handleClick}
         >
-            <Text size={"xl"}>{icon}</Text>
-            <Text fontWeight={"200"}>{name}</Text>
+            <HStack>
+                <Text size={"xl"}>{icon}</Text>
+                <Text fontWeight={"200"}>{name}</Text>
+            </HStack>
+            <Text>+</Text>
         </HStack>
     );
 }
@@ -227,7 +281,7 @@ function BlogContent({ w, onOpen }) {
                 fontWeight="bold"
                 sx={{
                     "::placeholder": {
-                    //   color: "black"
+                        //   color: "black"
                     },
                 }}
             />
@@ -239,7 +293,7 @@ function BlogContent({ w, onOpen }) {
     );
 }
 
-function BlogActions({onOpen}) {
+function BlogActions({ onOpen }) {
     const btnStyle = {
         bg: "black",
         color: "white",
@@ -253,14 +307,19 @@ function BlogActions({onOpen}) {
 
     return (
         <HStack justify={"flex-end"} w={"100%"} spacing={4}>
-            <Button {...btnStyle} onClick={onOpen}>Show Preview</Button>
+            <Button {...btnStyle} onClick={onOpen}>
+                Show Preview
+            </Button>
             <Button {...btnStyle}>Publish</Button>
         </HStack>
     );
 }
 
 function BlogEditor() {
-    const [blocks, setBlocks] = useState(data);
+    // const [blocks, setBlocks] = useState(data);
+
+    const dispatch = useDispatch();
+    const blocks = useSelector((state) => state.blocks);
 
     // Handle elements sorting with "arrayMove"
     function handleDragEnd(event) {
@@ -270,7 +329,7 @@ function BlogEditor() {
                 (block) => block.id === active.id
             );
             const newIndex = blocks.findIndex((block) => block.id === over.id);
-            setBlocks(arrayMove(blocks, oldIndex, newIndex));
+            dispatch(updateBlocks(arrayMove(blocks, oldIndex, newIndex)))
         }
     }
 
@@ -287,8 +346,10 @@ function BlogEditor() {
                 Document
             </Text>
 
+            {/* Draggable Area  */}
             <DraggableItems>
                 <DragArea data={blocks} handleDragEnd={handleDragEnd}>
+                    {/* Draggable Blocks  */}
                     {blocks.map((block) => {
                         return (
                             <DraggableItem
@@ -296,13 +357,14 @@ function BlogEditor() {
                                 id={block.id}
                                 my={"2rem"}
                             >
-                                <DragBlock type={block.type} />
+                                <DragBlock type={block.type} id={block.id}/>
                                 {/* <Button>Drag</Button>
                                 {block.type}
                                 <Input type="text"/> */}
                             </DraggableItem>
                         );
                     })}
+
                     {/* <DragBlock type={"heading"} />
                     <DragBlock type={"text"} />
                     <DragBlock type={"image"} /> */}
@@ -320,7 +382,14 @@ function DraggableItems({ children }) {
     );
 }
 
-function DragBlock({ type }) {
+function DragBlock({ type, id }) {
+    const dispatch = useDispatch();
+
+    const handleDelete = () => {
+        // console.log(id);
+        dispatch(deleteBlock(id));
+    }
+
     return (
         <HStack w={"100%"} align={"center"}>
             <Text size={"xl"}>
@@ -328,15 +397,15 @@ function DragBlock({ type }) {
             </Text>
 
             <Flex w={"100%"} mx={"1rem"}>
-                {type == "heading" && (
+                {(type == "heading" || type == "link") && (
                     <BlogEditorInput
-                        placeholder={"Nuevo Encabezado"}
+                        placeholder={type == "heading" ? "Nuevo Encabezado" : "Enter Youtube link"}
                         type={"text"}
-                        fontSize="1.2rem" // Adjust placeholder size
-                        fontWeight="bold"
+                        fontSize={type == "heading" ? "1.2rem" : "1rem"}
+                        fontWeight={type == "heading" ? "bold" : "400"}
                         sx={{
                             "::placeholder": {
-                            //   color: "black"
+                                //   color: "black"
                             },
                         }}
                     />
@@ -370,7 +439,7 @@ function DragBlock({ type }) {
                 )}
             </Flex>
 
-            <Text size={"md"}>
+            <Text size={"md"} onClick={handleDelete}>
                 <FiTrash2 />
             </Text>
         </HStack>

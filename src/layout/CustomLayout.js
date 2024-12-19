@@ -19,7 +19,7 @@ export default function CustomLayout({ children, title, bg, maxW = "80%", arrows
             color={bg == "white" ? "black" : "white"}
             position={"relative"}
         >
-            <Flechas arrowsCrolor={arrowsCrolor} arrowsBg={arrowsBg}/>
+            {/* <Flechas arrowsCrolor={arrowsCrolor} arrowsBg={arrowsBg}/> */}
             <Container maxW={maxW} py={"5rem"}>
                 <HStack justify={"space-between"} width={"80%"} m={"auto"}>
                     <HStack justify={"center"}>

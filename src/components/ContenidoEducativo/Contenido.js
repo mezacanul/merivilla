@@ -1,13 +1,50 @@
 import CustomLayout from "@/layout/CustomLayout";
 import { HStack, Box, Heading, VStack, Text, Flex } from "@chakra-ui/react";
 import Overlay from "../common/Overlay";
+import scaleEffect from "@/utils/scaleEffect";
+import Link from "next/link";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Contenido() {
+    const [blogsData, setBlogsData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("/data/blogs.json"); // Relative path to public folder
+                const data = response.data;
+                console.log(data.slice(1,4));
+
+                setBlogsData(data.slice(1,4));
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <CustomLayout bg={"blue"} title={"CONTENIDO GRATIS"} maxW={"100%"} arrowsColor={"white"}>
             {/* <Box w={"80%"}> */}
                 <HStack my={"6rem"} justify={"space-between"} w={"100%"} px={"5rem"}>
-                    <CardsContenido 
+
+                    {blogsData.map((blog)=>{
+                        return (
+                            <CardsContenido 
+                                key={blog.title}
+                                title={blog.title}
+                                subtitle={blog.category}
+                                subtitleColor={"blue"}
+                                text={blog.description}
+                                date={"01/01/2025"}
+                                author={blog.author}
+                                img={blog.img}
+                            />
+                        )
+                    })}
+                    {/* <CardsContenido 
                         title={"5 METRICAS QUE DEBES ESTAR USANDO"}
                         subtitle={"VENTAS Y MARKETING"}
                         subtitleColor={"blue"}
@@ -16,7 +53,7 @@ export default function Contenido() {
                             competicion.`}
                         date={"01/01/2025"}
                         author={"John Doe"}
-                        img={"serv2.webp"}
+                        img={"blog2.webp"}
                     />
                     
                     <CardsContenido 
@@ -28,7 +65,7 @@ export default function Contenido() {
                             competicion.`}
                         date={"01/01/2025"}
                         author={"John Doe"}
-                        img={"serv2.webp"}
+                        img={"blog2.webp"}
                     />
                     
                     <CardsContenido 
@@ -40,8 +77,8 @@ export default function Contenido() {
                             competicion.`}
                         date={"01/01/2025"}
                         author={"John Doe"}
-                        img={"serv2.webp"}
-                    />
+                        img={"blog2.webp"}
+                    /> */}
                 </HStack>
             {/* </Box> */}
         </CustomLayout>
@@ -50,7 +87,7 @@ export default function Contenido() {
 
 function CardsContenido({title, subtitle, subtitleColor, text, date, author, img}) {
     return (
-        <VStack width={"31rem"} align={"center"}>
+        <VStack as={Link} href={"/blog"} width={"31rem"} align={"center"} {...scaleEffect}>
             {/* Image Box  */}
             <Box
                 // backgroundImage="url('serv2.webp')"
@@ -60,7 +97,7 @@ function CardsContenido({title, subtitle, subtitleColor, text, date, author, img
                 h={"28rem"}
                 p={"2rem"}
             >
-                <Overlay color={"light"} />
+                <Overlay color={"light"} opacity={0.4} />
                 <Heading fontWeight={"bold"} size={"md"} color={"black"} position={"relative"}>
                     {title}
                 </Heading>

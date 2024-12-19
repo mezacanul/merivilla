@@ -1,50 +1,56 @@
 [
     {
-        "category": "Industry Insights",
-        "title": "The Future of SaaS: Trends to Watch in 2023",
-        "description": "Discover the latest trends in SaaS that are shaping the future of digital solutions and how your business can benefit.",
-        "author": "John Doe",
-        "date": "January 15, 2023",
-        "authorImg": "face1.jpg"
+        "category": "Tendencias Inmobiliarias",
+        "title": "Colonias Emergentes en Mérida: Dónde Invertir en 2024",
+        "description": "Descubre las zonas con mayor potencial de plusvalía en Mérida y por qué son una excelente opción para invertir.",
+        "author": "Carlos Medina",
+        "date": "15 de enero, 2024",
+        "authorImg": "face1.jpg",
+        "img": "blog3.jpg"
     },
     {
-        "category": "Business Growth",
-        "title": "Boost Your Business with Custom Software Solutions",
-        "description": "Learn how custom software solutions can streamline your operations and drive growth in your business.",
-        "author": "Jane Smith",
-        "date": "February 20, 2023",
-        "authorImg": "face1.jpg"
+        "category": "Guía de Inversión",
+        "title": "Norte de Mérida: La Nueva Zona Dorada para Bienes Raíces",
+        "description": "Análisis completo del crecimiento inmobiliario en el norte de Mérida y las oportunidades que ofrece para inversionistas.",
+        "author": "Ana Ramírez",
+        "date": "20 de febrero, 2024",
+        "authorImg": "face1.jpg",
+        "img": "blog.jpg"
     },
     {
-        "category": "Case Studies",
-        "title": "Case Study: How We Helped XYZ Corp Increase Efficiency",
-        "description": "A detailed case study on how our digital solutions helped XYZ Corp improve their efficiency by 30%.",
-        "author": "Alice Johnson",
-        "date": "March 10, 2023",
-        "authorImg": "face1.jpg"
+        "category": "Casos de Éxito",
+        "title": "De Casa Antigua a Hotel Boutique: Renovación en Centro Histórico",
+        "description": "Conoce cómo una propiedad colonial se transformó en un exitoso hotel boutique en el corazón de Mérida.",
+        "author": "Luis Torres",
+        "date": "10 de marzo, 2024",
+        "authorImg": "face1.jpg",
+        "img": "blog2.webp"
     },
     {
-        "category": "Industry Insights",
-        "title": "The Future of SaaS: Trends to Watch in 2023",
-        "description": "Discover the latest trends in SaaS that are shaping the future of digital solutions and how your business can benefit.",
-        "author": "John Doe",
-        "date": "January 15, 2023",
-        "authorImg": "face1.jpg"
+        "category": "Mercado Inmobiliario",
+        "title": "Precio por Metro Cuadrado: Guía 2024 para Mérida",
+        "description": "Todo lo que necesitas saber sobre los precios actuales en las diferentes zonas de Mérida y sus tendencias.",
+        "author": "María González",
+        "date": "5 de abril, 2024",
+        "authorImg": "face1.jpg",
+        "img": "blog.webp"
     },
     {
-        "category": "Business Growth",
-        "title": "Boost Your Business with Custom Software Solutions",
-        "description": "Learn how custom software solutions can streamline your operations and drive growth in your business.",
-        "author": "Jane Smith",
-        "date": "February 20, 2023",
-        "authorImg": "face1.jpg"
+        "category": "Estilo de Vida",
+        "title": "Vivir en Mérida: La Ciudad más Segura de México",
+        "description": "Por qué cada vez más personas eligen Mérida para vivir y cómo esto impacta el mercado inmobiliario local.",
+        "author": "Roberto Díaz",
+        "date": "12 de mayo, 2024",
+        "authorImg": "face1.jpg",
+        "img": "blog4.jpeg"
     },
     {
-        "category": "Case Studies",
-        "title": "Case Study: How We Helped XYZ Corp Increase Efficiency",
-        "description": "A detailed case study on how our digital solutions helped XYZ Corp improve their efficiency by 30%.",
-        "author": "Alice Johnson",
-        "date": "March 10, 2023",
-        "authorImg": "face1.jpg"
+        "category": "Desarrollo Urbano",
+        "title": "Nuevos Desarrollos en Mérida: Proyectos para 2024-2025",
+        "description": "Análisis de los próximos desarrollos residenciales y comerciales que transformarán el paisaje urbano de Mérida.",
+        "author": "Patricia Solís",
+        "date": "1 de junio, 2024",
+        "authorImg": "face1.jpg",
+        "img": "blog2.jpg"
     }
 ]

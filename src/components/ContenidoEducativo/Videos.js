@@ -2,6 +2,7 @@ import CustomLayout from "@/layout/CustomLayout";
 import { Text, Box, Circle, Heading, HStack, VStack } from "@chakra-ui/react";
 import { PiCrownSimpleFill } from "react-icons/pi";
 import Overlay from "../common/Overlay";
+import scaleEffect from "@/utils/scaleEffect";
 
 export default function Videos() {
     return (
@@ -38,6 +39,7 @@ export default function Videos() {
 function VideoCards({ title, category, date, author, img }) {
     return (
         <VStack
+            {...scaleEffect}
             position={"relative"}
             py={"2rem"}
             px={"2rem"}
