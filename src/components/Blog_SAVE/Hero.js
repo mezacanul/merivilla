@@ -95,13 +95,14 @@ function MainBlog({
     date,
     imgAuthor,
     text,
+    preview = false,
     ...props
 }) {
     return (
         <VStack align={"flex-start"} {...props} minH={"60vh"}>
             <Image
                 src={img}
-                h={"40rem"}
+                h={preview == false ? "40rem" : "32rem"}
                 w={"100%"}
                 m={"auto"}
                 objectFit={"cover"}

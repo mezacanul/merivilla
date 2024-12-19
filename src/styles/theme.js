@@ -40,7 +40,7 @@ const theme = extendTheme({
             sm: { fontSize: "18px" },
             md: { fontSize: "24px" }, // Default when fontSize="md"
             lg: { fontSize: "32px" },
-            // xl: { fontSize: "24px" },
+            xl: { fontSize: "38px" },
           },
           defaultProps: {
             size: "md", // Set the default size
