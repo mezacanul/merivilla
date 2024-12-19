@@ -69,7 +69,7 @@ export default function Index() {
                         </Collapsible>
                     )}
 
-                    <GoldButton>Crear Nuevo Blog</GoldButton>
+                    <GoldButton href={"/contenidoeducativo/post/nuevo"}>Crear Nuevo Blog</GoldButton>
 
                 </VStack>
             </Container>
