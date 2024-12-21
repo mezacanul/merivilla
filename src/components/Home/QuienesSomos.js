@@ -5,18 +5,18 @@ import GoldButton from "../common/GoldButton";
 export default function QuienesSomos() {
     return (
         <SectionLayout maxW={"85%"} bg={"blue"} color={"white"} py="7rem">
-            <Heading textAlign={"left"} px={["0", "2rem"]} mb={["1rem", "2rem"]}>
+            <Heading textAlign={"left"} mb={{base: "2rem", xl: "1rem"}}>
                 QUIENES SOMOS
             </Heading>
-            <Stack direction={["column-reverse", "row"]} align={"center"}>
+            <Stack direction={{base:"column-reverse", xl:"row"}} align={"center"}>
                 <VStack
-                    w={["100%", "50%"]}
+                    w={{base:"100%", xl: "50%"}}
                     align={"flex-start"}
-                    px={"2rem"}
+                    // px={"2rem"}
                     spacing={"2rem"}
-                    mr={"4rem"}
+                    mr={{base:"", xl: "4rem"}}
                 >
-                    <Text mb={"0.3rem"}>
+                    <Text size={{base:"sm", md: "md"}} mb={"0.3rem"}>
                         Desde Yucatán y Estados Unidos, con un conocimiento
                         profundo sobre el mercado inmobiliario, combinado con
                         una experiencia sólida en las más recientes innovaciones
@@ -25,13 +25,13 @@ export default function QuienesSomos() {
                         se unió para crear y ofrecer un valor excepcional a los
                         inmobiliarios.
                     </Text>
-                    <Text mb={"0.5rem"}>
+                    <Text size={{base:"sm", md: "md"}} mb={"0.5rem"}>
                         <>
                             {`Un ambiente enfocado en la excelencia, complementado con
                             estrategias actualizadas, herramientas innovadoras que
                             pocos conocen y menos saben manejar, y una red de
                             expertos en todos los aspectos de la industria. `}
-                            <Text as={"b"} display={"inline"}>
+                            <Text size={{base:"sm", md: "md"}} as={"b"} display={"inline"}>
                                 Merivilla Co
                             </Text> 
                             {` está aquí para transformar negocios
@@ -45,10 +45,10 @@ export default function QuienesSomos() {
                 <Box
                     bgImage={"url('/acerca.webp')"}
                     backgroundSize={"cover"}
-                    w={["100%", "50%"]}
+                    w={{base:"100%", xl: "50%"}}
                     h={["20rem", "35rem"]}
-                    mb={["1.5rem", "0"]}
-                    boxShadow={["none", "-30px 30px 30px rgba(0,0,0,0.3)"]}
+                    mb={{base:"1.5rem", xl: "0"}}
+                    boxShadow={{base:"none", xl: "-30px 30px 30px rgba(0,0,0,0.3)"}}
                 >
                     <Box
                         w={"100%"}

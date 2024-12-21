@@ -18,14 +18,14 @@ export default function Hero() {
                 align={"flex-start"}
                 position={"relative"}
                 color={"black"}
-                w={"50%"}
+                w={{base:"100%", xl: "50%"}}
+                px={{base:"1rem", md: "4rem", lg: "6rem", xl: "8rem"}}
                 mt={"-8rem"}
-                px={"8rem"}
             >
-                <Heading mb={"0.8rem"}>
+                <Heading size={{base:"md", lg: "lg", xl: "xl"}} mb={"0.8rem"}>
                     CAPACITACION Y CONOCIMIENTO
                 </Heading>
-                <Text w={"70%"} ml={"0.7rem"}>
+                <Text w={{base:"70%", xl: "100%"}} ml={"0.7rem"} size={{base:"sm", md: "md", xl: "lg"}}>
                     Aqui aprenderas cosas mucho antes que nadie, refinete con
                     nuestro contenido y estaras adelante de tu competencia.
                 </Text>

@@ -50,7 +50,7 @@ export default function Servicios() {
                         title={
                             <>
                                 {"SOFTWARE "}
-                                <Text as={"b"} display={"inline"}>
+                                <Text size={{base: "sm", md: "md"}} as={"b"} display={"inline"}>
                                     VENTAJE
                                 </Text>
                             </>
@@ -92,8 +92,8 @@ export default function Servicios() {
             </SectionLayout>
 
             {/* Beneficios  */}
-            <Container maxW={"container.xl"} color={"black"} mt={"-8rem"} mb={"7rem"}>
-                <Stack justify={"space-around"} my={"3rem"} align={["center", "flex-start"]} direction={["column", "row"]}>
+            <Container maxW={{base: "initial", xl: "container.xl"}} color={"black"} mt={"-8rem"} mb={"7rem"}>
+                <Stack my={"3rem"} align={["center", "flex-start"]} direction={["column", "row"]}>
                     <Beneficio
                         icon={<IoPeopleSharp />}
                         title={"EQUIPO PERSONALIZADO"}
@@ -140,15 +140,15 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
     let flexDir = direction != "left" ? "row" : "row-reverse";
 
     return (
-        <Stack justify={"center"} position={"relative"} direction={["column-reverse", "column-reverse", "column-reverse", flexDir]} align={"center"}>
+        <Stack justify={"center"} position={"relative"} direction={{ base: "column-reverse", xl: flexDir}} align={"center"}>
             {/* Floating Number */}
             <Heading
-                size={["xl", "xl", "xl", "xl"]}
+                size={"xl"}
                 fontWeight={"bold"}
                 position={"absolute"}
                 zIndex={10}
                 top={"-3.5rem"}
-                {...(direction == "right" ? { left: [0, "3.5rem", "8rem", 0] } : { right: [0, "3.5rem", "8rem", 0] })}
+                {...(direction == "right" ? { left: {base: 0, md: "6rem", lg: "16rem", xl: 0} } : { right: {base: 0, md: "7rem", lg: "16rem", xl: 0} })}
                 bgGradient={
                     // "linear-gradient(-45deg, #644609 10%, #f6b431 50%) 1"
                     "linear-gradient(45deg, #9c6a07 0%,#dbb262 80%) 1"
@@ -160,24 +160,24 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
 
             {/* Text Box  */}
             <VStack
-                mt={["-5rem", "-5rem", "-8rem", "0"]}
+                mt={{ base: "-5rem", lg: "-8rem", xl: "0"}}
                 borderRadius={2}
                 boxShadow={["0", `${
                     direction == "right" ? "30px" : "-30px"
                 } 25px 40px rgba(0,0,0,0.4)`]}
                 zIndex={2}
-                {...(direction == "right" ? { mr: ["0", "0", "0", "-4rem"] } : { ml: ["0", "0", "0", "-4rem"] })}
-                // mr={"-4rem"}
+                {...(direction == "right" ? { mr: {base: "0", xl: "-4rem"} } : { ml: { base: "0", xl: "-4rem"} })}
                 bgColor={bg}
                 color={bg == "light" ? "black" : "white"}
-                w={["90%", "65%", "55%", "45%"]}
+                // w={["90%", "65%", "55%", "45%"]}
+                w={{base: "90%", md: "60%", lg: "42%", xl: "45%"}}
                 py={["2.5rem", "2.5rem", "2.5rem", "3.5rem"]}
                 px={"2rem"}
             >
-                <Text size={["sm", "sm", "md", "md"]} mb={"0.7rem"} textAlign={"center"}>
+                <Text size={{base: "sm", md: "md"}} mb={"0.7rem"} textAlign={"center"}>
                     {title}
                 </Text>
-                <Text size={["xs", "xs", "sm", "sm"]} textAlign={"center"} mb={"0.5rem"}>
+                <Text size={"sm"} textAlign={"center"} mb={"1.5rem"}>
                     {text}
                 </Text>
                 <LinkButton href={href}>
@@ -214,10 +214,10 @@ function Beneficio({ icon, title, text }) {
             >
                 {icon}
             </Circle>
-            <Text size={["sm", "xs", "sm", "lg"]} as={"b"} textAlign={"center"} width={"80%"} mb={"0.6rem"}>
+            <Text size={{base: "md", xl: "lg"}} as={"b"} textAlign={"center"} width={"80%"} mb={"0.6rem"}>
                 {title}
             </Text>
-            <Text size={"sm"} textAlign={"center"} width={"75%"}>
+            <Text size={{base: "sm", xl: "md"}} textAlign={"center"} width={"75%"}>
                 {text}
             </Text>
         </VStack>

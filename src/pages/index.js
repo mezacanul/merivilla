@@ -10,10 +10,10 @@ export default function Index() {
     <>
       <Hero />
       <Servicios />
-      {/* <QuienesSomos />
+      <QuienesSomos />
       <Testimoniales />
       <Clients />
-      <Contacto /> */}
+      <Contacto />
     </>
   )
 }

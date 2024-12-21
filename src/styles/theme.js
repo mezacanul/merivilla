@@ -3,6 +3,11 @@ import { extendTheme } from "@chakra-ui/react";
 import { color } from "framer-motion";
 
 const theme = extendTheme({
+    breakpoints: {
+        // base: '0em',
+        // md: "480px",
+        // lg: "1024px",
+    },
     fonts: {
         heading: "Montserrat Black, sans-serif",
         body: "Montserrat, sans-serif",
@@ -45,7 +50,7 @@ const theme = extendTheme({
                 xl: { fontSize: "38px" },
             },
             defaultProps: {
-                size: ["sm", "md", "md"], // Set the default size
+                size: {base: "sm", xl: "md"}, // Set the default size
             },
         },
         Heading: {
@@ -59,7 +64,7 @@ const theme = extendTheme({
                 xl: { fontSize: "72px" },
             },
             defaultProps: {
-                size: ["md", "lg", "lg", "lg"], // Default size for headings
+                size: {base: "md", md: "lg", xl: "xl"}, // Set the default size
             },
         },
     },

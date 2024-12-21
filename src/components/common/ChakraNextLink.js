@@ -1,7 +1,7 @@
 import NextLink from "next/link";
 import { Link as ChakraLink, Text } from "@chakra-ui/react";
 
-function ChakraNextLink({ children, bg, color, href }) {
+function ChakraNextLink({ children, bg, color, href, ...props }) {
     return (
         <>
             <ChakraLink
@@ -15,8 +15,8 @@ function ChakraNextLink({ children, bg, color, href }) {
                     textDecor: "none",
                     borderColor: "white",
                 }}
-            >
-                <Text size={"sm"}>
+                >
+                <Text {...props}>
                     {children}
                 </Text>
             </ChakraLink>

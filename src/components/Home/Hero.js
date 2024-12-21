@@ -14,35 +14,39 @@ import { Link as ScrollLink } from "react-scroll";
 export default function Hero() {
     return (
         <>
-            <Flex {...styles.container} minH={"100vh"} px={["2rem", "2rem", "3rem", "9rem"]} pt={["8rem", "8rem", "8rem", "0"]}>
+            <Flex {...styles.container} minH={"100vh"} px={{base: "2.5rem", md: "4rem", lg: "7rem", xl: "10rem"}} pt={{base: "8rem", xl: 0}}>
                 {/* Overlay  */}
                 <Box {...styles.blackOverlay} />
 
                 {/* Hero Relative Content  */}
                 <Box zIndex={1}>
+                    {/* Titulo  */}
                     <Heading
                         mb={"1rem"}
-                        width={["100%", "80vw", "50vw"]}
+                        width={{base:"90%"}}
                         fontWeight={"300"}
-                        size={["sm", "sm", "lg"]}
                     >
-                        <Heading size={["sm", "sm", "sm", "lg"]} as={"b"} display={"inline"} fontWeight={600}>
+                        <Heading as={"b"} display={"inline"} fontWeight={600}>
                             EVOLUCIONA
                         </Heading>
                         {" "}TU NEGOCIO INMOBILIARIO EN{" "}
-                        <Heading size={["sm", "sm", "sm", "lg"]} as={"b"} display={"inline"} fontWeight={600}>
+                        <Heading as={"b"} display={"inline"} fontWeight={600}>
                             2025
                         </Heading>
                     </Heading>
-                    <Text w={["100%", "80%", "45vw"]} mb={"3rem"} size={["sm", "sm", "sm", "md"]}>
+
+                    {/* Texto  */}
+                    <Text w={{base: "100%", md: "75%"}} mb={"1.5rem"} size={{md: "md", xl: "lg"}}>
                         Ante una industria competitiva en innovación constante,{" "}
-                        <Text size={["sm", "sm", "sm", "md"]} as={"b"}>
+                        <Text size={{md: "md", xl: "lg"}} as={"b"}>
                             Merivilla Co
                         </Text>{" "}
                         te ofrece las herramientas necesarias para no solo
                         adaptarse, sino estar adelante del mercado y llevar tu
                         negocio al siguiente nivel.
                     </Text>
+
+                    {/* Boton  */}
                     <ScrollLink 
                         to={"contacto"} 
                         smooth={true}
@@ -54,11 +58,11 @@ export default function Hero() {
                 </Box>
 
                 {/* Testimonial  */}
-                <HeroTestimonial display={["none", "none", "none", "flex"]} version={"desktop"}/>
+                <HeroTestimonial display={{base: "none", xl: "flex"}} version={"desktop"}/>
 
             </Flex>
         
-            <HeroTestimonial display={["flex", "flex", "flex", "none"]} version={"mobile"}/>
+            <HeroTestimonial display={{base: "flex", xl: "none"}} version={"mobile"}/>
         </>
     );
 }
@@ -68,33 +72,33 @@ function HeroTestimonial({display, version}) {
         <>
             {/* Testimonial  */}
             <Stack
-                direction={["column-reverse", "column-reverse", "column-reverse", "row"]}
+                direction={{ base: "column-reverse", xl: "row"}}
                 align={"center"}
                 {...styles.testimonial.main}
-                px={["3rem", "4rem", "5rem", "2rem"]}
-                py={["3rem", "3rem", "3rem", "2.5rem"]}
+                px={{base: "3rem", md: "11rem", lg: "13rem", xl: "2rem"}}
+                py={{ base: "3rem", md: "5rem", lg: "4rem", xl: "2.5rem"}}
                 {...(version == "desktop" ? styles.testimonial.desktop : styles.testimonial.mobile)}
-                boxShadow={["", "", "", "0px 10px 8px rgba(0,0,0,0.3)"]}
-                position={["relative", "relative", "relative", "absolute"]}
+                boxShadow={{base: "", xl: "0px 10px 8px rgba(0,0,0,0.3)"}}
+                position={{base: "relative", xl: "absolute"}}
                 display={display}
             >
                 <Box {...styles.testimonialText}>
                     <Text
                         as={"b"}
-                        size={["xs", "xs", "sm", "sm"]}
                         w={"85%"}
                         margin={"auto"}
+                        size={{xl: "sm"}}
                     >
                         "Gracias a Merivilla Co, este año nuestro desarrollo
                         será el más vendido en el municipio de Aldea Zamá,
                         Tulum."
                     </Text>
-                    <Text size={["xs", "xs", "sm", "sm"]} fontWeight={400} mt={"1rem"}>
+                    <Text size={{xl: "sm"}} fontWeight={400} mt={"1rem"}>
                         CEO de DOGE
                     </Text>
                 </Box>
 
-                <Image {...styles.img} src={"face.jpg"} mb={["1.5rem", "1.5rem", "1.5rem", "0"]}/>
+                <Image {...styles.img} src={"face.jpg"} mb={{base: "1.5rem", xl: "0"}}/>
             </Stack>
         </>
     )

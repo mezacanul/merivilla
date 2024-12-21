@@ -25,9 +25,9 @@ export default function Contacto() {
             backdrop={true}
             backdropColor={"blue"}
             backdropOpacity={0.7}
-            py={["10rem", "15rem"]}
+            pt={{base:"10rem", xl: "20rem"}}
         >
-            <Stack justify={"space-between"} direction={["column-reverse", "row"]}>
+            <Stack spacing={"2rem"} direction={{base:"column-reverse", xl: "row"}}>
                 <Formulario />
                 <Informacion />
             </Stack>
@@ -39,7 +39,7 @@ function Formulario() {
     const [submitted, setSubmitted] = useState(false)
 
     return (
-        <Box w={["100%", "40%"]} px={"2rem"}>
+        <Box w={{base:"100%", md: "70%", xl: "55%"}} px={"2rem"} margin={"auto"}>
             {(submitted == true) &&
                 <VStack color={"white"} spacing={2} fontWeight={"bold"}>
                     <Text>!Gracias por inscribirte!</Text>
@@ -49,7 +49,7 @@ function Formulario() {
 
             {(submitted == false) &&  
                 <VStack>
-                    <Heading textAlign={"center"} size={"sm"} mb={"1.5rem"} fontWeight={400}>
+                    <Heading textAlign={"center"} size={{base:"sm", md: "md", lg: "lg", xl: "lg"}} mb={"1.5rem"} fontWeight={400}>
                         INSCRIBETE HOY
                     </Heading>
                     
@@ -118,13 +118,13 @@ function Formulario() {
 
 function Informacion() {
     return (
-        <Box w={["100%", "55%"]} mt={["0", "-10rem"]} px={"2rem"} alignItems={"flex-end"} mb={["2rem", "0"]}>
-            <VStack textAlign={"right"} mb={"2rem"} align={"flex-end"}>
+        <Box w={{base:"100%", xl: "55%"}} mt={{xl: "-10rem"}} px={"2rem"} alignItems={"flex-end"} mb={{base:"2rem", xl: "0"}}>
+            <VStack textAlign={"right"} mb={"2rem"} align={{base:"center", xl: "flex-end"}}>
                 <Heading fontWeight={300}>TU ULTIMA</Heading>
                 <Heading fontWeight={"bold"} mb={"1rem"}>
                     OPORTUNIDAD
                 </Heading>
-                <Text fontSize={"xl"} w={"90%"}>
+                <Text size={{base:"sm", md: "md", lg: "lg"}} w={"90%"} textAlign={{base:"center", xl: "right"}}>
                     El mercado está evolucionando, la tecnología esta avanzando,
                     y tus competidores ya están innovando. No te quedes atrás.
                     Nosotros estamos listos para ayudarte a transformar tu
@@ -132,15 +132,21 @@ function Informacion() {
                 </Text>
             </VStack>
 
-            <VStack align={["center", "flex-start"]} spacing={"1.4rem"}>
+            <VStack align={{base:"center", xl: "flex-start"}} spacing={{base:"1.2rem", md: "1rem"}}>
                 <ChakraLink {...(styles.chakraLink)} as={NextLink} href="tel:+2528562398">
-                    +2528562398
+                    <Text size={{base:"sm", md: "md"}}>
+                        +2528562398
+                    </Text>
                 </ChakraLink>
                 <ChakraLink {...(styles.chakraLink)} as={NextLink} href="mailto:contacto@merivilla.co">
-                    contacto@merivilla.co
+                    <Text size={{base:"sm", md: "md"}}>
+                        contacto@merivilla.co
+                    </Text>
                 </ChakraLink>
-                <ChakraLink {...(styles.chakraLink)} as={NextLink} href="https://maps.app.goo.gl/wXqBB6WEHahZ5r5p6" target="_blank">
-                    Calle 36a 308, San Ramon Norte
+                <ChakraLink textAlign={"center"} {...(styles.chakraLink)} as={NextLink} href="https://maps.app.goo.gl/wXqBB6WEHahZ5r5p6" target="_blank">
+                    <Text size={{base:"sm", md: "md"}}>
+                        Calle 36a 308, San Ramon Norte
+                    </Text>
                 </ChakraLink>
                 <ChakraLink
                     {...(styles.chakraLink)} 
@@ -149,7 +155,9 @@ function Informacion() {
                     borderBottom={"1px"}
                     _hover={{ cursor: "pointer" }}
                 >
-                    Merivilla.com
+                    <Text size={{base:"sm", md: "md"}}>
+                        Merivilla.com
+                    </Text>
                 </ChakraLink>
                 <ChakraLink
                     {...(styles.chakraLink)} 
@@ -159,7 +167,9 @@ function Informacion() {
                     borderBottom={"1px"}
                     _hover={{ cursor: "pointer" }}
                 >
-                    Ventaje.com
+                    <Text size={{base:"sm", md: "md"}}>
+                        Ventaje.com
+                    </Text>
                 </ChakraLink>
             </VStack>
         </Box>
@@ -168,7 +178,7 @@ function Informacion() {
 
 const styles = {
     chakraLink: {
-        fontSize: "1.4rem",
+        // size: "lg",
         fontWeight: "bold"
     }
 }

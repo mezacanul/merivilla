@@ -32,7 +32,7 @@ export default function Header({onOpen}) {
     return (
         <Flex
             zIndex={10}
-            minH={"6rem"}
+            minH={{base:"4rem", lg: "5rem", xl: "6rem"}}
             alignItems={"center"}
             backgroundColor={"transparent"}
             position={"fixed"}
@@ -49,13 +49,13 @@ export default function Header({onOpen}) {
                     href="/"
                 >
                     <HStack align={"flex-end"} spacing={0}>
-                        <Text display={"inline"} fontWeight={800}>
+                        <Text fontSize={{lg: "lg", xl: "xl"}} display={"inline"} fontWeight={800}>
                             MERIVILLA.</Text>
-                        <Text>CO</Text>
+                        <Text fontSize={{lg: "lg", xl: "xl"}}>CO</Text>
                     </HStack>
                 </Link>
 
-                <Text size={["md", "sm", "md", "lg"]} onClick={onOpen}>
+                <Text size={{base: "md", md: "lg", lg: "lg", xl: "lg"}} onClick={onOpen}>
                     <HamburgerIcon cursor="pointer" />
                 </Text>
             </Flex>
