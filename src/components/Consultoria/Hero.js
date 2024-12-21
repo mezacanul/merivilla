@@ -9,6 +9,7 @@ export default function Hero() {
             height="100vh"
             backgroundImage="url('serv1-mirror.jpg')"
             backgroundSize="cover"
+            backgroundPosition={"center"}
             align={"center"}
             position={"relative"}
         >
@@ -18,9 +19,9 @@ export default function Hero() {
                 align={"flex-start"}
                 position={"relative"}
                 color={"black"}
-                w={"50%"}
+                w={{base:"100%", xl: "50%"}}
+                px={{base:"1rem", md: "4rem", lg: "6rem", xl: "8rem"}}
                 mt={"-8rem"}
-                px={"8rem"}
             >
                 <Heading mb={"0.8rem"}>
                     CONSULTA CON NUESTROS EXPERTOS

@@ -5,6 +5,7 @@ import scaleEffect from "@/utils/scaleEffect";
 import Link from "next/link";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BlogCard } from "../Blog_SAVE/Hero";
 
 export default function Contenido() {
     const [blogsData, setBlogsData] = useState([]);
@@ -14,9 +15,9 @@ export default function Contenido() {
             try {
                 const response = await axios.get("/data/blogs.json"); // Relative path to public folder
                 const data = response.data;
-                console.log(data.slice(1,4));
+                console.log(data.slice(1,2));
 
-                setBlogsData(data.slice(1,4));
+                setBlogsData(data.slice(1,2));
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -28,57 +29,28 @@ export default function Contenido() {
     return (
         <CustomLayout bg={"blue"} title={"CONTENIDO GRATIS"} maxW={"100%"} arrowsColor={"white"}>
             {/* <Box w={"80%"}> */}
-                <HStack my={"6rem"} justify={"space-between"} w={"100%"} px={"5rem"}>
+                <HStack my={{base:"3rem", xl: "6rem"}} justify={"center"} w={{base:"100%"}} px={{base:"1rem", xl: "5rem"}}>
 
                     {blogsData.map((blog)=>{
                         return (
-                            <CardsContenido 
-                                key={blog.title}
-                                title={blog.title}
-                                subtitle={blog.category}
-                                subtitleColor={"blue"}
-                                text={blog.description}
-                                date={"01/01/2025"}
-                                author={blog.author}
-                                img={blog.img}
-                            />
+
+                            <Box w={{base:"100%", md: "75%", lg: "75%", xl: "60%"}}>
+                                <BlogCard blog={blog}/>
+                            </Box>
+                            
+                            // <CardsContenido 
+                            //     key={blog.title}
+                            //     title={blog.title}
+                            //     subtitle={blog.category}
+                            //     subtitleColor={"blue"}
+                            //     text={blog.description}
+                            //     date={"01/01/2025"}
+                            //     author={blog.author}
+                            //     img={blog.img}
+                            // />
                         )
                     })}
-                    {/* <CardsContenido 
-                        title={"5 METRICAS QUE DEBES ESTAR USANDO"}
-                        subtitle={"VENTAS Y MARKETING"}
-                        subtitleColor={"blue"}
-                        text={`Aqui aprenderas cosas mucho antes que nadie, refinete
-                            con nuestro contenido y estaras adelante de tu
-                            competicion.`}
-                        date={"01/01/2025"}
-                        author={"John Doe"}
-                        img={"blog2.webp"}
-                    />
                     
-                    <CardsContenido 
-                        title={"5 METRICAS QUE DEBES ESTAR USANDO"}
-                        subtitle={"VENTAS Y MARKETING"}
-                        subtitleColor={"orange"}
-                        text={`Aqui aprenderas cosas mucho antes que nadie, refinete
-                            con nuestro contenido y estaras adelante de tu
-                            competicion.`}
-                        date={"01/01/2025"}
-                        author={"John Doe"}
-                        img={"blog2.webp"}
-                    />
-                    
-                    <CardsContenido 
-                        title={"5 METRICAS QUE DEBES ESTAR USANDO"}
-                        subtitle={"VENTAS Y MARKETING"}
-                        subtitleColor={"blue"}
-                        text={`Aqui aprenderas cosas mucho antes que nadie, refinete
-                            con nuestro contenido y estaras adelante de tu
-                            competicion.`}
-                        date={"01/01/2025"}
-                        author={"John Doe"}
-                        img={"blog2.webp"}
-                    /> */}
                 </HStack>
             {/* </Box> */}
         </CustomLayout>
@@ -90,11 +62,11 @@ function CardsContenido({title, subtitle, subtitleColor, text, date, author, img
         <VStack as={Link} href={"/blog"} width={"31rem"} align={"center"} {...scaleEffect}>
             {/* Image Box  */}
             <Box
-                // backgroundImage="url('serv2.webp')"
                 backgroundImage={`url('${img}')`}
                 backgroundSize="cover"
+                backgroundPosition={"center"}
                 position={"relative"}
-                h={"28rem"}
+                h={{base:"24rem", xl: "28rem"}}
                 p={"2rem"}
             >
                 <Overlay color={"light"} opacity={0.4} />
@@ -105,7 +77,7 @@ function CardsContenido({title, subtitle, subtitleColor, text, date, author, img
 
             {/* Content Box */}
             <VStack
-                mt={"-7.5rem"}
+                mt={{base:"-4rem", xl: "-7.5rem"}}
                 position={"relative"}
                 bg={"white"}
                 color={"black"}

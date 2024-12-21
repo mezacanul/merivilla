@@ -60,7 +60,9 @@ export default function NuevoPost() {
                     </Heading>
 
                     {/* <BlogEditor /> */}
-                    <HStack align={"flex-start"}>
+                    <Text display={{base: "block", md: "none"}}>Esta funcion solo esta disponible en tableta y escritorio.</Text>
+                    
+                    <HStack display={{base: "none", md: "flex"}} align={"flex-start"}>
                         <BlogBlocks w={"20%"} />
                         <BlogContent onOpen={onOpen} w={"80%"} />
                     </HStack>
@@ -98,7 +100,7 @@ const FullscreenModal = ({ isOpen, onClose }) => {
             closeOnOverlayClick={true}
         >
             <ModalOverlay />
-            <ModalContent bg={"transparent"} mx={"5rem"} boxShadow={"none"}>
+            <ModalContent bg={"transparent"}  boxShadow={"none"}>
                 {/* <ModalHeader>Fullscreen Modal</ModalHeader> */}
                 <ModalCloseButton
                     color={"white"}
@@ -208,8 +210,15 @@ function BlogBlocks({ w }) {
                     borderRadius={"0.5rem"}
                     px={"1.5rem"}
                     py={"0.5rem"}
+                    align={"center"}
                 >
-                    <Text size={"sm"} w={"40%"}>
+                    <HStack align={"center"}>
+                        <Text size={"md"}>
+                            <IoImageOutline/>
+                        </Text>
+                        <Text size={{md: "xs", lg: "sm"}}>añadir</Text>
+                    </HStack>
+                    {/* <Text size={"sm"} w={"40%"}>
                         Subir archivo
                     </Text>
                     <Text
@@ -221,7 +230,7 @@ function BlogBlocks({ w }) {
                         overflow={"hidden"}
                     >
                         Ningun archivo seleccionado
-                    </Text>
+                    </Text> */}
                 </HStack>
             </VStack>
 
@@ -230,7 +239,7 @@ function BlogBlocks({ w }) {
                 <Text size={"sm"} as={"b"}>
                     Jane Doe
                 </Text>
-                <Text fontWeight={"200"} size={"sm"}>
+                <Text fontWeight={"200"} size={"sm"} textAlign={"right"}>
                     December 19, 2024 at 12:10 AM
                 </Text>
                 <Text fontWeight={"200"} size={"sm"}>
@@ -255,14 +264,14 @@ function AddBlockBtn({ name, icon, type, onClick }) {
             w={"100%"}
             p={"5"}
             borderRadius={"1rem"}
-            justify={"space-between"}
+            justify={{base: "flex-start", lg: "space-between"}}
             onClick={handleClick}
         >
             <HStack>
                 <Text size={"xl"}>{icon}</Text>
-                <Text fontWeight={"200"}>{name}</Text>
+                <Text display={{md: "none", lg: "inline"}} fontWeight={"200"}>{name}</Text>
             </HStack>
-            <Text>+</Text>
+            <Text size={"md"}>+</Text>
         </HStack>
     );
 }
@@ -426,8 +435,8 @@ function DragBlock({ type, id }) {
                     <Flex
                         align={"center"}
                         justify={"center"}
-                        w={"30rem"}
-                        h={"20rem"}
+                        w={{base: "20rem", lg: "30rem"}}
+                        h={{base: "15rem", lg: "20rem"}}
                         bg={"light"}
                     >
                         <VStack opacity={0.5}>

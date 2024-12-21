@@ -7,6 +7,7 @@ import {
     Text,
     Flex,
     Circle,
+    SimpleGrid,
 } from "@chakra-ui/react";
 import Overlay from "../common/Overlay";
 import GoldButton from "../common/GoldButton";
@@ -20,12 +21,13 @@ export default function Expertos() {
             arrowsColor={"white"}
         >
             {/* <Box w={"80%"}> */}
-            <HStack
-                my={"6rem"}
-                justify={"space-between"}
+            <SimpleGrid
+                my={{base:"3rem", xl: "6rem"}}
+                columns={{ base: 1, xl: 4 }}
+                spacingX={"3rem"} // 24px horizontal gap
+                spacingY={"5rem"} // 16px vertical gap
                 w={"100%"}
-                px={"5rem"}
-                mt={"7rem"}
+                // px={"5rem"}
             >
                 <CardsContenido
                     author={"JOHN DOE"}
@@ -50,7 +52,7 @@ export default function Expertos() {
                     text={`Exercitation quis sunt sunt non ad excepteur est consectetur incididunt. Sit nostrud do excepteur duis aliquip pariatur aliqua laborum veniam cillum ad motiv.`}
                     cta={"AGENDAR CONSULTA"}
                 />
-            </HStack>
+            </SimpleGrid>
             {/* </Box> */}
         </CustomLayout>
     );
@@ -58,7 +60,7 @@ export default function Expertos() {
 
 function CardsContenido({ author, img, title, text, cta }) {
     return (
-        <VStack width={"32rem"} bg={"white"} color={"black"} py={"2rem"} px={"3rem"} boxShadow={"0px 1.5rem 20px rgba(0,0,0,0.3)"}>
+        <VStack m={"auto"} width={{base:"20rem", md: "32rem"}} bg={"white"} color={"black"} py={"2rem"} px={"3rem"} boxShadow={"0px 1.5rem 20px rgba(0,0,0,0.3)"}>
             <Text mb={"1rem"}>{author}</Text>
             <Circle
                 backgroundImage={`url('${img}')`}

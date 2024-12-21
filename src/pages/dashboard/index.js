@@ -38,8 +38,8 @@ export default function Index() {
             <Container maxW={"90%"}>
                 {/* Bienvenida */}
                 <Box mb={"3rem"}>
-                    <Heading mb={"1rem"} size={"lg"}>Bienvenido Usuario!</Heading>
-                    <Text size={"sm"}>
+                    <Heading mb={"1rem"} size={{base:"md", md: "lg"}}>Bienvenido Usuario!</Heading>
+                    <Text size={"sm"} w={{base:"70%", xl: "100%"}}>
                         {"Aquí podrás configurar tu perfil"}
                         {role == "creador" && ", ver tus blogs y crear nuevos blogs"}
                         {role != "creador" && " y ver tu lista de blogs favoritos"}
@@ -53,7 +53,7 @@ export default function Index() {
                 <VStack align={"flex-start"} spacing={"1rem"}>
                     
                     {/* Perfil  */}
-                    <Collapsible w={"50%"} title={<Heading size={"md"}>Mi perfil</Heading>}>
+                    <Collapsible w={{base:"100%", xl: "50%"}} title={<Heading size={"md"}>Mi perfil</Heading>}>
                         <PerfilForm/>
                     </Collapsible>
 
@@ -81,14 +81,14 @@ export default function Index() {
 
 function BlogList(){  
     return (
-        <>
+        <Box w={"100%"} position={"relative"}>
             <GoldButton mb={"2rem"} href={"/contenidoeducativo/post/nuevo"}>Crear Nuevo Blog</GoldButton>
 
-            <TableContainer w={"100%"} ml={"-1rem"}>
+            <TableContainer w={"100%"} ml={"-1rem"} overflow={"hidden"}>
                 <Table variant="simple" w={"100%"}>
                     <Thead bg={"blue"}>
                         <Tr>
-                            <Th color={"white"} fontSize="lg">Blog</Th>
+                            <Th w={{base: "10rem", lg: "30rem"}} color={"white"} fontSize="lg">Blog</Th>
                             <Th color={"white"} fontSize="lg">Categoría</Th>
                             <Th color={"white"} fontSize="lg"></Th>
                         </Tr>
@@ -97,7 +97,7 @@ function BlogList(){
                         {items.map((item) => (
                         <Tr key={item.id} _hover={{bg: "light"}} transition={"all 0.1s"} fontSize={"xl"}>
                             <Td>
-                                <ChakraLink as={Link} href="#">
+                                <ChakraLink display={"block"} overflow={"hidden"} textOverflow={"ellipsis"} whiteSpace={"nowrap"} w={{base: "13rem", lg: "20rem"}} as={Link} href="#">
                                     {item.name}
                                 </ChakraLink>
                             </Td>
@@ -122,7 +122,7 @@ function BlogList(){
                     </Tbody>
                 </Table>
             </TableContainer>
-        </>
+        </Box>
     )
 }
 
@@ -187,12 +187,12 @@ function PhotoComponent({label, placeholder}) {
     return (
         <FormControl id="password" mb={4}>
             <HStack align={"center"}>
-                <FormLabel fontWeight={"bold"} w={"15rem"}>
+                <FormLabel fontWeight={"bold"} w={{base: "8rem", md: "15rem"}}>
                     {label}
                 </FormLabel>
 
-                <HStack align={"center"} justify={"flex-start"} w={"100%"} position={"relative"} ml={"-1rem"}>
-                    <IoPersonCircle color="#D9D9D9" fontSize={"7rem"}/>
+                <HStack align={"center"} justify={"flex-start"} w={"100%"} position={"relative"} >
+                    <IoPersonCircle color="#D9D9D9" fontSize={"6rem"}/>
                     <Input
                         h={"auto"}
                         w={"auto"}

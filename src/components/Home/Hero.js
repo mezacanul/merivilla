@@ -36,9 +36,9 @@ export default function Hero() {
                     </Heading>
 
                     {/* Texto  */}
-                    <Text w={{base: "100%", md: "75%"}} mb={"1.5rem"} size={{md: "md", xl: "lg"}}>
+                    <Text w={{base: "100%", md: "75%", "2xl": "60%"}} mb={"1.5rem"} size={{base: "sm", md: "md"}}>
                         Ante una industria competitiva en innovación constante,{" "}
-                        <Text size={{md: "md", xl: "lg"}} as={"b"}>
+                        <Text size={{base: "sm", md: "md"}} as={"b"}>
                             Merivilla Co
                         </Text>{" "}
                         te ofrece las herramientas necesarias para no solo

@@ -44,9 +44,9 @@ export default function Blog() {
 function AgendarConsulta({ author, date, imgAuthor }){
     return (
         <VStack align={"flex-start"} maxW={"90%"} margin={"auto"} mb={"6rem"}>
-            <HStack color={"black"} align={"center"} mb={"2rem"}>
+            <HStack color={"black"} align={"center"} mb={{base:"1.5rem", md: "1rem"}}>
                 <Circle
-                    p={"4rem"}
+                    p={{base:"3rem", xl: "5rem"}}
                     bgImage={imgAuthor}
                     bgSize={"cover"}
                     me={"0.5rem"}
@@ -56,7 +56,7 @@ function AgendarConsulta({ author, date, imgAuthor }){
                     <Text size={"lg"} as={"b"}>
                         {author}
                     </Text>
-                    <Text size={"sm"} mb={"1rem"}>
+                    <Text size={"sm"} >
                         {"Asesor Inmobiliario de Altamar Bienes Raíces"}
                     </Text>
                 </VStack>

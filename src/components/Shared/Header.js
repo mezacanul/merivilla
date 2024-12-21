@@ -49,9 +49,9 @@ export default function Header({onOpen}) {
                     href="/"
                 >
                     <HStack align={"flex-end"} spacing={0}>
-                        <Text fontSize={{lg: "lg", xl: "xl"}} display={"inline"} fontWeight={800}>
+                        <Text size={{base: "sm", xl: "md"}} display={"inline"} fontWeight={800}>
                             MERIVILLA.</Text>
-                        <Text fontSize={{lg: "lg", xl: "xl"}}>CO</Text>
+                        <Text size={{base: "sm", xl: "md"}}>CO</Text>
                     </HStack>
                 </Link>
 

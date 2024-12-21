@@ -34,7 +34,7 @@ export default function DrawerMenu({isOpen, onClose}) {
     return (
         <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={["2rem", "sm"]}>
             <DrawerOverlay />
-            <DrawerContent color={"black"} px={"1.5rem"}>
+            <DrawerContent color={"black"} px={"1.5rem"} style={{width: "100%"}}>
                 <DrawerCloseButton m={"0.5rem"} />
                 <DrawerHeader fontSize={"2.2rem"} mt={"2rem"} mb={"0.5rem"}>MERIVILLA</DrawerHeader>
 

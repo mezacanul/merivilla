@@ -26,20 +26,20 @@ export default function Login() {
             {/* Contenedor  */}
             <VStack w={"28rem"} spacing={"2rem"} mt={"-4rem"}>
                 {/* Titulo  */}
-                <Box w={"26rem"}>
+                <Box>
                     <HStack justify={"center"}>
-                        <Text size={"lg"} fontWeight={"light"}>Bienvenido a </Text>
-                        <Text size={"lg"} as={"b"}>Merivilla.co</Text>
+                        <Text size={{base:"md", md: "lg", xl: "xl"}} fontWeight={"light"}>Bienvenido a </Text>
+                        <Text size={{base:"md", md: "lg", xl: "xl"}} as={"b"}>Merivilla.co</Text>
                     </HStack>
-                    <Text textAlign={"center"} color={"dark"}>
-                        <Text as={"span"} size={"sm"}>
+                    <Text textAlign={"center"} color={"dark"} w={{base:"80%", md: "100%"}} m={"auto"}>
+                        <Text as={"span"} size={{base:"sm", xl: "md"}}>
                             Inicia sesión para continuar o puedes crear una
                             cuenta{" "}
                         </Text>
                         <Link href={"/onboard"}>
                             <Text
                                 as={"b"}
-                                size={"sm"}
+                                size={{base:"sm", xl: "md"}}
                                 _hover={{
                                     textDecor: "underline"
                                 }}
@@ -51,7 +51,7 @@ export default function Login() {
                 </Box>
 
                 {/* Formulario  */}
-                <VStack w={"100%"} align={"self-start"}>
+                <VStack w={{base:"80%", xl: "100%"}} align={"self-start"}>
                     <InputGroup>
                         <VStack w={"100%"}>
                             <FormControl id="email" mb={4}>
