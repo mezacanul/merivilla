@@ -1,21 +1,21 @@
-import { Heading, HStack, VStack, Box, Text } from "@chakra-ui/react";
+import { Heading, HStack, VStack, Box, Text, Stack } from "@chakra-ui/react";
 import SectionLayout from "@/layout/SectionLayout";
 import GoldButton from "../common/GoldButton";
 
 export default function QuienesSomos() {
     return (
         <SectionLayout maxW={"85%"} bg={"blue"} color={"white"} py="7rem">
-            <HStack>
+            <Heading textAlign={"left"} px={["0", "2rem"]} mb={["1rem", "2rem"]}>
+                QUIENES SOMOS
+            </Heading>
+            <Stack direction={["column-reverse", "row"]} align={"center"}>
                 <VStack
-                    w={"50%"}
+                    w={["100%", "50%"]}
                     align={"flex-start"}
                     px={"2rem"}
                     spacing={"2rem"}
                     mr={"4rem"}
                 >
-                    <Heading textAlign={"center"}>
-                        QUIENES SOMOS
-                    </Heading>
                     <Text mb={"0.3rem"}>
                         Desde Yucatán y Estados Unidos, con un conocimiento
                         profundo sobre el mercado inmobiliario, combinado con
@@ -45,9 +45,10 @@ export default function QuienesSomos() {
                 <Box
                     bgImage={"url('/acerca.webp')"}
                     backgroundSize={"cover"}
-                    w={"50%"}
-                    h={"35rem"}
-                    boxShadow={"-30px 30px 30px rgba(0,0,0,0.3)"}
+                    w={["100%", "50%"]}
+                    h={["20rem", "35rem"]}
+                    mb={["1.5rem", "0"]}
+                    boxShadow={["none", "-30px 30px 30px rgba(0,0,0,0.3)"]}
                 >
                     <Box
                         w={"100%"}
@@ -56,7 +57,7 @@ export default function QuienesSomos() {
                         opacity={0.65}
                     />
                 </Box>
-            </HStack>
+            </Stack>
         </SectionLayout>
     );
 }

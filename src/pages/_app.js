@@ -7,24 +7,27 @@ import { useDisclosure } from "@chakra-ui/react";
 import DrawerMenu from "@/components/Shared/Drawer";
 import { Provider } from 'react-redux';
 import { store } from '../store'; // Create this file
+import Head from "next/head";
 
 export default function App({ Component, pageProps, router }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
-        <Provider store={store}>
-            <ChakraProvider theme={theme}>
-                {/* <AnimatePresence mode="wait" initial={true}> */}
-                <Header key={"Header"} onOpen={onOpen} />
+        <>
+            <Provider store={store}>
+                <ChakraProvider theme={theme}>
+                    {/* <AnimatePresence mode="wait" initial={true}> */}
+                    <Header key={"Header"} onOpen={onOpen} />
 
-                <main>
-                    <Component {...pageProps} key={router.route} />
-                </main>
-                <DrawerMenu isOpen={isOpen} onClose={onClose} />
+                    <main>
+                        <Component {...pageProps} key={router.route} />
+                    </main>
+                    <DrawerMenu isOpen={isOpen} onClose={onClose} />
 
-                <Footer key={"Footer"} />
-                {/* </AnimatePresence> */}
-            </ChakraProvider>
-        </Provider>
+                    <Footer key={"Footer"} />
+                    {/* </AnimatePresence> */}
+                </ChakraProvider>
+            </Provider>
+        </>
     );
 }

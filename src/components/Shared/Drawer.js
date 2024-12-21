@@ -32,7 +32,7 @@ export default function DrawerMenu({isOpen, onClose}) {
     }, [])
 
     return (
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"sm"}>
+        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={["2rem", "sm"]}>
             <DrawerOverlay />
             <DrawerContent color={"black"} px={"1.5rem"}>
                 <DrawerCloseButton m={"0.5rem"} />

@@ -1,4 +1,4 @@
-import { Box, Circle, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Circle, Container, Heading, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import { HiMiniArrowsPointingIn } from "react-icons/hi2";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { IoPeopleSharp } from "react-icons/io5";
@@ -11,7 +11,7 @@ import SectionLayout from "@/layout/SectionLayout";
 export default function Servicios() {
     return (
         <>
-            <SectionLayout maxW={"container.lg"} color={"black"} py={"4rem"}>
+            <SectionLayout maxW={["100vw", "container.lg"]} color={"black"} py={"4rem"} px={["2rem", "0"]}>
                 <Heading textAlign={"center"} >
                     COMO TE AYUDAMOS
                 </Heading>
@@ -93,7 +93,7 @@ export default function Servicios() {
 
             {/* Beneficios  */}
             <Container maxW={"container.xl"} color={"black"} mt={"-8rem"} mb={"7rem"}>
-                <HStack justify={"space-around"} my={"3rem"} align={"flex-start"}>
+                <Stack justify={"space-around"} my={"3rem"} align={["center", "flex-start"]} direction={["column", "row"]}>
                     <Beneficio
                         icon={<IoPeopleSharp />}
                         title={"EQUIPO PERSONALIZADO"}
@@ -111,7 +111,7 @@ export default function Servicios() {
                         title={"OPTIMIZA"}
                         text={"Toma el control, reduce tus gastos, tiempo, y aun te daremos mas resultados."}
                     />
-                </HStack>
+                </Stack>
             </Container>
         </>
     );
@@ -140,13 +140,15 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
     let flexDir = direction != "left" ? "row" : "row-reverse";
 
     return (
-        <HStack justify={"center"} position={"relative"} flexDir={flexDir}>
+        <Stack justify={"center"} position={"relative"} direction={["column-reverse", "column-reverse", "column-reverse", flexDir]} align={"center"}>
+            {/* Floating Number */}
             <Heading
-                size={"xl"}
+                size={["xl", "xl", "xl", "xl"]}
                 fontWeight={"bold"}
                 position={"absolute"}
+                zIndex={10}
                 top={"-3.5rem"}
-                {...(direction == "right" ? { left: 0 } : { right: 0 })}
+                {...(direction == "right" ? { left: [0, "3.5rem", "8rem", 0] } : { right: [0, "3.5rem", "8rem", 0] })}
                 bgGradient={
                     // "linear-gradient(-45deg, #644609 10%, #f6b431 50%) 1"
                     "linear-gradient(45deg, #9c6a07 0%,#dbb262 80%) 1"
@@ -158,30 +160,35 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
 
             {/* Text Box  */}
             <VStack
+                mt={["-5rem", "-5rem", "-8rem", "0"]}
                 borderRadius={2}
-                boxShadow={`${
+                boxShadow={["0", `${
                     direction == "right" ? "30px" : "-30px"
-                } 25px 40px rgba(0,0,0,0.4)`}
+                } 25px 40px rgba(0,0,0,0.4)`]}
                 zIndex={2}
-                {...(direction == "right" ? { mr: "-4rem" } : { ml: "-4rem" })}
+                {...(direction == "right" ? { mr: ["0", "0", "0", "-4rem"] } : { ml: ["0", "0", "0", "-4rem"] })}
                 // mr={"-4rem"}
                 bgColor={bg}
                 color={bg == "light" ? "black" : "white"}
-                w={"45%"}
-                py={"3.5rem"}
+                w={["90%", "65%", "55%", "45%"]}
+                py={["2.5rem", "2.5rem", "2.5rem", "3.5rem"]}
                 px={"2rem"}
             >
-                <Text mb={"0.7rem"}>
+                <Text size={["sm", "sm", "md", "md"]} mb={"0.7rem"} textAlign={"center"}>
                     {title}
                 </Text>
-                <Text size={"sm"} textAlign={"center"} mb={"0.5rem"}>
+                <Text size={["xs", "xs", "sm", "sm"]} textAlign={"center"} mb={"0.5rem"}>
                     {text}
                 </Text>
-                <LinkButton fontSize={"lg"} href={href}>{cta}</LinkButton>
+                <LinkButton href={href}>
+                    <Text textAlign={"center"} size={["xs", "xs", "md", "sm"]}>
+                        {cta}
+                    </Text>
+                </LinkButton>
             </VStack>
 
             {/* Image Box  */}
-            <Box bgImage={img} backgroundSize={"cover"} w={"50%"} h={"30rem"}>
+            <Box bgImage={img} backgroundSize={"cover"} w={["100%", "80%", "70%", "50%"]} h={["20rem", "25rem", "28rem", "30rem"]}>
                 <Box
                     w={"100%"}
                     h={"100%"}
@@ -189,15 +196,15 @@ function Servicio({ direction, number, title, text, cta, imgUrl, bg, href }) {
                     opacity={0.65}
                 />
             </Box>
-        </HStack>
+        </Stack>
     );
 }
 
 function Beneficio({ icon, title, text }) {
     return (
-        <VStack w={"33%"}>
+        <VStack w={["90%", "33%"]}>
             <Circle
-                mb={"1rem"}
+                mb={["0", "1rem"]}
                 // borderWidth={"0.7rem"}
                 // borderColor={"blue"}
                 borderColor={"transparent"}
@@ -207,7 +214,7 @@ function Beneficio({ icon, title, text }) {
             >
                 {icon}
             </Circle>
-            <Text as={"b"} textAlign={"center"} width={"80%"} mb={"0.6rem"}>
+            <Text size={["sm", "xs", "sm", "lg"]} as={"b"} textAlign={"center"} width={"80%"} mb={"0.6rem"}>
                 {title}
             </Text>
             <Text size={"sm"} textAlign={"center"} width={"75%"}>

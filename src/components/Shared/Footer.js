@@ -1,10 +1,10 @@
-import { Box, Container, HStack, Text } from "@chakra-ui/react";
+import { Box, Container, HStack, Stack, Text } from "@chakra-ui/react";
 import { ChakraNextLink as Link } from "../common/ChakraNextLink";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const Divider = () => {
-    return <Text fontWeight={"600"} _hover={{cursor: "default"}}>|</Text>;
+    return <Text fontWeight={"600"} transform={["rotate(90deg)", "none"]} _hover={{cursor: "default"}}>|</Text>;
 };
 
 export default function Footer() {
@@ -24,11 +24,13 @@ export default function Footer() {
     return (
         <>
             {useFooter == true && 
-                (<Box bg={"black"} px={"6rem"} pt={"3rem"} pb={"3rem"}>
+                (<Box bg={"black"} px={["", "6rem"]} py={["6rem", "3rem"]}>
                     <Container maxW={"container.xl"}>
-                        <HStack
+                        <Stack
+                            direction={["column", "row"]}
                             justify={"center"}
-                            spacing={"0.8rem"}
+                            align={["center"]}
+                            spacing={["0.2rem", "0.8rem"]}
                             mb={"2rem"}
                         >
                             <Link href={"privacidad"}>POLITICA DE PRIVACIDAD</Link>
@@ -44,7 +46,7 @@ export default function Footer() {
                             >
                                 <Link href={"ventaje"}>VENTAJE</Link>
                             </Text>
-                        </HStack>
+                        </Stack>
                         {/* <Text fontSize={"0.9rem"} textAlign={"center"}>Merivilla 2024 ©</Text> */}
                     </Container>
                 </Box>)

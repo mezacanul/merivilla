@@ -7,6 +7,7 @@ import {
     Input,
     Select,
     Text,
+    Stack,
 } from "@chakra-ui/react";
 import SectionLayout from "@/layout/SectionLayout";
 import { countries } from "countries-list";
@@ -24,12 +25,12 @@ export default function Contacto() {
             backdrop={true}
             backdropColor={"blue"}
             backdropOpacity={0.7}
-            py={"15rem"}
+            py={["10rem", "15rem"]}
         >
-            <HStack justify={"space-between"}>
+            <Stack justify={"space-between"} direction={["column-reverse", "row"]}>
                 <Formulario />
                 <Informacion />
-            </HStack>
+            </Stack>
         </SectionLayout>
     );
 }
@@ -38,7 +39,7 @@ function Formulario() {
     const [submitted, setSubmitted] = useState(false)
 
     return (
-        <Box w={"40%"} px={"2rem"}>
+        <Box w={["100%", "40%"]} px={"2rem"}>
             {(submitted == true) &&
                 <VStack color={"white"} spacing={2} fontWeight={"bold"}>
                     <Text>!Gracias por inscribirte!</Text>
@@ -117,7 +118,7 @@ function Formulario() {
 
 function Informacion() {
     return (
-        <Box w={"55%"} mt={"-10rem"} px={"2rem"} alignItems={"flex-end"}>
+        <Box w={["100%", "55%"]} mt={["0", "-10rem"]} px={"2rem"} alignItems={"flex-end"} mb={["2rem", "0"]}>
             <VStack textAlign={"right"} mb={"2rem"} align={"flex-end"}>
                 <Heading fontWeight={300}>TU ULTIMA</Heading>
                 <Heading fontWeight={"bold"} mb={"1rem"}>
@@ -131,7 +132,7 @@ function Informacion() {
                 </Text>
             </VStack>
 
-            <VStack align={"flex-start"} spacing={"1.4rem"}>
+            <VStack align={["center", "flex-start"]} spacing={"1.4rem"}>
                 <ChakraLink {...(styles.chakraLink)} as={NextLink} href="tel:+2528562398">
                     +2528562398
                 </ChakraLink>

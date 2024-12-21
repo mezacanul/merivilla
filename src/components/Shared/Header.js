@@ -42,22 +42,22 @@ export default function Header({onOpen}) {
             boxShadow={scrolling ? "lg" : "none"}
             transition="background-color 0.4s ease, box-shadow 0.3s ease"
         >
-            <Flex w={"100%"} justifyContent={"space-between"} px={"2em"}>
+            <Flex w={"100%"} justifyContent={"space-between"} align={"center"} px={"2em"}>
                 <Link
                     style={{ marginRight: "1em" }}
                     {...LinkStyles("left")}
                     href="/"
                 >
                     <HStack align={"flex-end"} spacing={0}>
-                        <Text size={"md"} display={"inline"} fontWeight={800}>
+                        <Text display={"inline"} fontWeight={800}>
                             MERIVILLA.</Text>
-                        <Text size={"md"}>CO</Text>
+                        <Text>CO</Text>
                     </HStack>
                 </Link>
 
-                <Box onClick={onOpen}>
-                    <HamburgerIcon fontSize={"2.8rem"} cursor="pointer" />
-                </Box>
+                <Text size={["md", "sm", "md", "lg"]} onClick={onOpen}>
+                    <HamburgerIcon cursor="pointer" />
+                </Text>
             </Flex>
         </Flex>
     );

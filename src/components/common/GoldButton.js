@@ -10,7 +10,7 @@ export default function GoldButton({children, w, href, ...props}) {
             {...styles.btn}
             w={w}
             {...props}
-            fontSize={"lg"}
+            fontSize={["md", "sm", "md", "lg"]}
         >
           {children}
         </Button>
@@ -31,7 +31,7 @@ const styles = {
             // borderColor:"white",
             transform: "scale(1.04)",
         },
-        px: "2rem",
-        py: "1rem"
+        px: ["1.2rem", "1.2rem", "1.2rem", "2rem"],
+        py: ["0.8rem", "0.8rem", "0.8rem", "1rem"]
     },
 }

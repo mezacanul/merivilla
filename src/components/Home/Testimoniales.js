@@ -1,4 +1,4 @@
-import { Heading, HStack, VStack, Circle, Text, Flex, Box } from "@chakra-ui/react";
+import { Heading, HStack, VStack, Circle, Text, Flex, Box, Stack } from "@chakra-ui/react";
 import SectionLayout from "@/layout/SectionLayout";
 
 export default function Testimoniales() {
@@ -14,7 +14,7 @@ export default function Testimoniales() {
                 TESTIMONIALES
             </Heading>
 
-            <HStack my={"6rem"} justify={"space-between"} align={"stretch"}>
+            <Stack my={"6rem"} spacing={["4rem","1rem"]} justify={"space-between"} align={"stretch"} direction={["column", "row"]}>
                 <Testimonial
                     image={"url('/face1.jpg')"}
                     text={
@@ -46,7 +46,7 @@ export default function Testimoniales() {
                     }
                     name={"CEO de Empresa"}
                 />
-            </HStack>
+            </Stack>
         </SectionLayout>
     );
 }
@@ -55,12 +55,12 @@ function Testimonial({ image, text, name }) {
     return (
         // <Box>
             <VStack
-                w={"23%"}
+                w={["100%", "23%"]}
                 // h={"25rem"}
                 textAlign={"center"}
                 bg={"white"}
                 color={"black"}
-                py={"3.5rem"}
+                py={["2rem", "2.5rem"]}
                 px={"1rem"}
                 boxShadow={"0px 20px 30px rgba(0,0,0,0.4)"}
             >

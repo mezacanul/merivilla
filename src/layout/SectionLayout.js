@@ -1,4 +1,4 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Flex, Stack } from "@chakra-ui/react";
 
 export default function SectionLayout({
     children,
@@ -13,7 +13,7 @@ export default function SectionLayout({
 }) {
 
     return (
-        <Box bg={bg} py={py} color={color} position={"relative"} bgSize={"cover"} {...props}>
+        <Stack bg={bg} py={py} color={color} position={"relative"} bgSize={"cover"} {...props} align={"center"}>
             {backdrop && (
                 <Box w={"100%"} h={"100%"}
                     position={"absolute"} top={0} left={0}
@@ -21,9 +21,9 @@ export default function SectionLayout({
                     bgSize={"cover"} bgPos={"center"}
                 />
             )}
-            <Container maxW={maxW} zIndex={5} position={"relative"}>
+            <Box maxW={maxW} zIndex={5} position={"relative"}>
                 {children}
-            </Container>
-        </Box>
+            </Box>
+        </Stack>
     );
 }
