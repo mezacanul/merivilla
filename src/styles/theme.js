@@ -1,6 +1,5 @@
 // Create a custom theme
 import { extendTheme } from "@chakra-ui/react";
-import { color } from "framer-motion";
 
 const theme = extendTheme({
     breakpoints: {

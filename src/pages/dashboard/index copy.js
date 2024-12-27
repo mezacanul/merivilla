@@ -21,8 +21,6 @@ import {
     TableContainer,
     Card,
     Textarea,
-    Image,
-    SimpleGrid,
 } from "@chakra-ui/react";
 import { IoPersonCircle } from "react-icons/io5";
 import { RiEditBoxLine } from "react-icons/ri";
@@ -61,7 +59,7 @@ export async function getServerSideProps(context) {
     }
 }
 
-export default function Index({ blogs }) {
+export default function Index({blogs}) {
     const [role, setRole] = useState("creador");
     const [blogsData, setBlogsData] = useState([]);
     const user = useSelector((state) => state.user);
@@ -145,7 +143,7 @@ export default function Index({ blogs }) {
                         <Collapsible
                             title={<Heading size={"md"}>Mis blogs</Heading>}
                         >
-                            <BlogList blogs={blogs} />
+                            <BlogList blogs={blogs}/>
                         </Collapsible>
                     )}
 
@@ -168,91 +166,82 @@ export default function Index({ blogs }) {
     );
 }
 
-function BlogCreatorCard({ blog }) {
-    return (
-        <HStack
-            align={"flex-start"}
-            border={"1px solid black"}
-            borderRadius={"1rem"}
-            overflow={"hidden"}
-        >
-            <Box
-                bgSize={"cover"}
-                bgPos={"center"}
-                h={"100%"}
-                w={"45rem"}
-                bgImage={blog.cover_image}
-            />
-
-            <VStack
-                // w={"45rem"}
-                p={"1rem"}
-                align={"flex-start"}
-                justify={"space-between"}
-                h={"100%"}
-            >
-                <Box>
-                    <Text as={"b"}>{blog.title}</Text>
-                    <Text
-                        size={"sm"}
-                        maxH={"10rem"}
-                        w={"100%"}
-                        overflow={"hidden"}
-                        textOverflow={"ellipsis"}
-                    >
-                        {blog.description}
-                    </Text>
-                </Box>
-
-                <HStack justify={"space-between"} w={"100%"}>
-                    <VStack align={"flex-start"} fontSize={"1.2rem"}>
-                        <ChakraLink
-                            as={Link}
-                            href={`/contenidoeducativo?id=${blog.uuid}`}
-                        >
-                            Ver
-                        </ChakraLink>
-                        <ChakraLink
-                            as={Link}
-                            href={`/contenidoeducativo/editor/${blog.uuid}`}
-                        >
-                            Editar
-                        </ChakraLink>
-                    </VStack>
-                    <VStack p={"1rem"} align={"flex-end"}>
-                        <HStack>
-                            <AiOutlineStock color="blue" />
-                            <Text size={"sm"}>1312</Text>
-                        </HStack>
-                        <HStack>
-                            <FaStar color="orange" />
-                            <Text size={"sm"}>229</Text>
-                        </HStack>
-                    </VStack>
-                </HStack>
-            </VStack>
-        </HStack>
-    );
-}
-
-function BlogList({ blogs }) {
+function BlogList({blogs}) {
     return (
         <Box w={"100%"} position={"relative"}>
-            <SimpleGrid
-                mt={"1rem"}
-                mb={"3rem"}
-                w={"100%"}
-                columns={3}
-                gap={"4rem"}
-            >
-                {blogs.map((blog) => (
-                    <BlogCreatorCard blog={blog} />
-                ))}
-            </SimpleGrid>
-
-            <GoldButton mb={"2rem"} href={"/contenidoeducativo/editor/nuevo"}>
+            <GoldButton mb={"2rem"} href={"/contenidoeducativo/editor"}>
                 Crear Nuevo Blog
             </GoldButton>
+
+            <TableContainer w={"100%"} ml={"-1rem"} overflow={"hidden"}>
+                <Table variant="simple" w={"100%"}>
+                    <Thead bg={"blue"}>
+                        <Tr>
+                            <Th
+                                w={{ base: "10rem", lg: "30rem" }}
+                                color={"white"}
+                                fontSize="lg"
+                            >
+                                Blog
+                            </Th>
+                            <Th color={"white"} fontSize="lg">
+                                Categoría
+                            </Th>
+                            <Th color={"white"} fontSize="lg"></Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {blogs.map((blog) => (
+                            <BlogCreatorCard blog={blog}/>
+                            <Tr
+                                key={item.id}
+                                _hover={{ bg: "light" }}
+                                transition={"all 0.1s"}
+                                fontSize={"xl"}
+                            >
+                                <Td>
+                                    <ChakraLink
+                                        display={"block"}
+                                        overflow={"hidden"}
+                                        textOverflow={"ellipsis"}
+                                        whiteSpace={"nowrap"}
+                                        w={{ base: "13rem", lg: "20rem" }}
+                                        as={Link}
+                                        href="#"
+                                    >
+                                        {item.name}
+                                    </ChakraLink>
+                                </Td>
+                                <Td>{item.category}</Td>
+                                <Td textAlign={"right"} fontSize={"2xl"}>
+                                    <HStack
+                                        spacing={3}
+                                        justify={"space-between"}
+                                    >
+                                        <IconStyled icon={<RiEditBoxLine />} />
+
+                                        <HStack>
+                                            <IconStyled
+                                                icon={<AiOutlineStock />}
+                                            />
+                                            <Text fontSize={"sm"}>
+                                                {item.views}
+                                            </Text>
+                                        </HStack>
+
+                                        <HStack>
+                                            <IconStyled icon={<FaStar />} />
+                                            <Text fontSize={"sm"}>
+                                                {item.fav}
+                                            </Text>
+                                        </HStack>
+                                    </HStack>
+                                </Td>
+                            </Tr>
+                        ))}
+                    </Tbody>
+                </Table>
+            </TableContainer>
         </Box>
     );
 }
@@ -446,8 +435,12 @@ function PhotoComponent({ label, placeholder }) {
     );
 }
 
-function BlogFavs({ blogs }) {
-    return <BlogsGrid blogs={blogs} py={"3rem"} />;
+function BlogFavs({ blogsData }) {
+    return (
+        <BlogsGrid blogsData={blogsData} py={"3rem"}>
+            <BlogCard />
+        </BlogsGrid>
+    );
 }
 
 const items = [

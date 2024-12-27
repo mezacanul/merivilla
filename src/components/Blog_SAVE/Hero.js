@@ -1,4 +1,5 @@
 import hexToRgba from "@/utils/hexToRgba";
+import moment from "moment";
 import {
     Box,
     Heading,
@@ -13,7 +14,9 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import Link from "next/link";
+import { Link as ChakraLink } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
 
 export default function Hero() {
     const [blogsData, setBlogsData] = useState([]);
@@ -111,8 +114,12 @@ function MainBlog({
             />
 
             <Container maxW={"90%"}>
-
-                <VStack color={"black"} align={"flex-start"} py={"2rem"} w={{base:"100%", md: "70%"}}>
+                <VStack
+                    color={"black"}
+                    align={"flex-start"}
+                    py={"2rem"}
+                    w={{ base: "100%", md: "70%" }}
+                >
                     <Text
                         mb={"2rem"}
                         color={"rgb(66, 146, 136)"}
@@ -121,7 +128,7 @@ function MainBlog({
                     >
                         {category}
                     </Text>
-                    <Heading mb={"1.5rem"} size={{base:"md", md: "lg"}}>
+                    <Heading mb={"1.5rem"} size={{ base: "md", md: "lg" }}>
                         {title}
                     </Heading>
                     <Text color={"dark"} mb={"2rem"} size={"sm"}>
@@ -135,9 +142,50 @@ function MainBlog({
                     />
                 </VStack>
 
-                <Text color={"black"} mt={"3rem"} mb={"6rem"} whiteSpace="pre-wrap">
+                <Box mb={"10rem"}>
+                    <Markdown
+                        urlTransform={(uri) => uri}
+                        components={{
+                            h2: ({ node, ...props }) => (
+                                <Heading my={"2rem"} size={"md"} {...props} color={"black"}/>
+                            ),
+                            p: ({ node, ...props }) => (
+                                <Text my={"2rem"} size={"md"} {...props} color={"black"}/>
+                            ),
+                            a: ({ node, ...props }) => {
+                                console.log({ ...props });
+                                return (
+                                    <ChakraLink
+                                        my={"2rem"}
+                                        as={Link}
+                                        size={"sm"}
+                                        target="_blank"
+                                        color={"#001eff"}
+                                        {...props}
+                                    />
+                                );
+                            },
+                            img: ({ ...props }) => {
+                                console.log({ ...props });
+
+                                return (
+                                    <Image
+                                        my={"3rem"}
+                                        w={"50rem"}
+                                        h={"35rem"}
+                                        objectFit={"cover"}
+                                        {...props}
+                                    />
+                                );
+                            },
+                        }}
+                    >
+                        {text}
+                    </Markdown>
+                </Box>
+                {/* <Text color={"black"} mt={"3rem"} mb={"6rem"} whiteSpace="pre-wrap">
                     {text}
-                </Text>
+                </Text> */}
             </Container>
         </VStack>
     );
@@ -153,30 +201,32 @@ function BlogAuthorIcon({ author, date, imgAuthor }) {
                 me={"0.5rem"}
             />
 
-            <VStack align={"self-start"} spacing={0} color={{base:"black"}}>
+            <VStack align={"self-start"} spacing={0} color={{ base: "black" }}>
                 <Text size={"sm"} as={"b"} className="blogAuthorIcon">
                     {author}
                 </Text>
                 <Text size={"sm"} className="blogAuthorIcon">
-                    {date}
+                    {moment(date).format(
+                        "MMMM D, YYYY [at] h:mm A"
+                    )}
                 </Text>
             </VStack>
         </HStack>
     );
 }
 
-function BlogsGrid({ blogsData, py }) {
+function BlogsGrid({ blogs, py }) {
     return (
         // <Flex justify={"center"}>
         <SimpleGrid
             color={"black"}
-            columns={{base: 1, lg: 2, xl: 3}}
+            columns={{ base: 1, lg: 2, xl: 3 }}
             justifyItems="center"
             spacing={"3rem"}
             spacingY={"5rem"}
             py={py}
         >
-            {blogsData.map((blog, index) => {
+            {blogs.map((blog, index) => {
                 const alignment =
                     index % 3 === 0
                         ? "start" // 1st column
@@ -184,38 +234,55 @@ function BlogsGrid({ blogsData, py }) {
                         ? "center" // 2nd column
                         : "end"; // 3rd column
 
-                return <BlogCard blog={blog} justifySelf={alignment} key={blog.title}/>;
+                return (
+                    <BlogCard
+                        blog={blog}
+                        justifySelf={alignment}
+                        key={blog.uuid}
+                    />
+                );
             })}
         </SimpleGrid>
         // </Flex>
     );
 }
 
-function BlogCard({ blog, ...props }) {
+function BlogCard({ blog, href, ...props }) {
+    // const formattedDate = Date.now().format("MMMM D, YYYY [at] h:mm A");
+
     return (
         <VStack
             as={Link}
-            href={"/blog"}
-            bg={{base: "white"}}
-            color={{base:"white"}}
+            href={`/contenidoeducativo?id=${blog.uuid}`}
+            bg={{ base: "white" }}
+            color={{ base: "white" }}
             {...props}
             align={"self-start"}
             _hover={{
-                transform: "scale(1.03)", // Scale on hover
+                // transform: "scale(1.03)", // Scale on hover
                 cursor: "pointer",
                 bg: "rgb(66, 146, 136)",
                 color: "white",
                 boxShadow: `0px 20px 20px ${hexToRgba("#000000", 0.2)}`,
                 ".category": { color: hexToRgba("#FFFFFF", 0.4) },
                 ".title": { color: "white" },
-                ".desc-text": { color: hexToRgba("#FFFFFF", 0.7)},
-                ".blogAuthorIcon": { color: hexToRgba("#FFFFFF", 0.7)}
+                ".desc-text": { color: hexToRgba("#FFFFFF", 0.7) },
+                ".blogAuthorIcon": { color: hexToRgba("#FFFFFF", 0.7) },
             }}
             transition="all 0.3s ease-in-out"
         >
-            <Image h={"16rem"} w={"100%"} objectFit={"cover"} src={blog.img}/>
+            <Image
+                h={"16rem"}
+                w={"100%"}
+                objectFit={"cover"}
+                src={blog.cover_image}
+            />
 
-            <VStack px={{base:"1rem", md: "2.5rem"}} py={"1.5rem"} align={"flex-start"}>
+            <VStack
+                px={{ base: "1rem", md: "2.5rem" }}
+                py={"1.5rem"}
+                align={"flex-start"}
+            >
                 <VStack align={"flex-start"}>
                     <Text
                         className="category"
@@ -228,20 +295,35 @@ function BlogCard({ blog, ...props }) {
                         {blog.category}
                     </Text>
 
-                    <Text className="title" color={{base:"black"}} size={"lg"} lineHeight={"1.3"}>{blog.title}</Text>
-                    <Text className="desc-text" size={"sm"} mb={"1.5rem"} color={hexToRgba("#000000", 0.6)} transition="all 0.3s ease-in-out">
+                    <Text
+                        className="title"
+                        color={{ base: "black" }}
+                        size={"lg"}
+                        lineHeight={"1.3"}
+                        transition="all 0.3s ease-in-out"
+                    >
+                        {blog.title}
+                    </Text>
+                    <Text
+                        className="desc-text"
+                        size={"sm"}
+                        mb={"1.5rem"}
+                        color={hexToRgba("#000000", 0.6)}
+                        transition="all 0.3s ease-in-out"
+                    >
                         {blog.description}
                     </Text>
                 </VStack>
 
                 <BlogAuthorIcon
+                    transition="all 0.3s ease-in-out"
                     author={blog.author}
-                    date={blog.date}
-                    imgAuthor={blog.authorImg}
+                    date={blog.created}
+                    imgAuthor={"face2.jpg"}
                 />
             </VStack>
         </VStack>
     );
 }
 
-export { MainBlog, BlogAuthorIcon, BlogCard, BlogsGrid }
+export { MainBlog, BlogAuthorIcon, BlogCard, BlogsGrid };

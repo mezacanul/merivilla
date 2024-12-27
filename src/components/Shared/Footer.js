@@ -20,7 +20,7 @@ export default function Footer() {
     const [useFooter, setUseFooter] = useState(true);
 
     useEffect(() => {
-        console.log(router.asPath);
+        // console.log(router.asPath);
 
         if (router.asPath == "/login") {
             setUseFooter(false);
@@ -41,15 +41,15 @@ export default function Footer() {
                             spacing={{ base: "0.2rem", lg: "0.8rem" }}
                             mb={"2rem"}
                         >
-                            <Link href={"privacidad"} size={{ base: "xs" }}>
+                            <Link href={"privacidad"} size={{ base: "xs", md: "sm", xl: "xs" }}>
                                 POLITICA DE PRIVACIDAD
                             </Link>
                             <Divider />
-                            <Link href={"uso"} size={{ base: "xs" }}>
+                            <Link href={"uso"} size={{ base: "xs", md: "sm", xl: "xs" }}>
                                 TERMINOS DE USO
                             </Link>
                             <Divider />
-                            <Link href={"trabajo"} size={{ base: "xs" }}>
+                            <Link href={"trabajo"} size={{ base: "xs", md: "sm", xl: "xs" }}>
                                 TRABAJO
                             </Link>
                             <Divider />
@@ -58,7 +58,7 @@ export default function Footer() {
                                 bgClip="text"
                                 as={"b"}
                             >
-                                <Link href={"ventaje"} size={{ base: "xs" }}>
+                                <Link href={"ventaje"} size={{ base: "xs", md: "sm", xl: "xs" }}>
                                     VENTAJE
                                 </Link>
                             </Text>

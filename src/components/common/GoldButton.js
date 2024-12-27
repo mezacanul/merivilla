@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function GoldButton({children, w, href, ...props}) {
     return (
-        <Button 
+        <Button
             {...(href ? {as: Link, href: href} : "")}
             variant={"link"} 
             color={"white"}

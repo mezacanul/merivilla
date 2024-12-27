@@ -1,0 +1,7 @@
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important; /* Change arrow color to white */
+    font-size: 3rem; /* Optional: Adjust arrow size */
+    z-index: 10; /* Ensure buttons are above other content */
+    /* background-color: black; */
+}

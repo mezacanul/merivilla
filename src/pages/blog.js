@@ -36,12 +36,12 @@ export default function Blog() {
                 imgAuthor={blogData.authorImg}
             />
 
-            <AgendarConsulta author={blogData.author} date={blogData.date} imgAuthor={blogData.authorImg}/>
+            <AgendarConsulta author={blogData.author} imgAuthor={blogData.authorImg}/>
         </>
     );
 }
 
-function AgendarConsulta({ author, date, imgAuthor }){
+export function AgendarConsulta({ author, imgAuthor }){
     return (
         <VStack align={"flex-start"} maxW={"90%"} margin={"auto"} mb={"6rem"}>
             <HStack color={"black"} align={"center"} mb={{base:"1.5rem", md: "1rem"}}>
@@ -64,11 +64,11 @@ function AgendarConsulta({ author, date, imgAuthor }){
             </HStack>
 
             <VStack align={"flex-start"}>
-                <Text maxW={"40rem"} mb={"2rem"} color={"black"}>
+                <Text ms={"1rem"} maxW={"35rem"} mt={"1rem"} mb={"2rem"} color={"black"} size={"sm"}>
                 {"Si te gustaría saber mas sobre el ramo inmobiliario y tener una consulta privada que se adapte a las necesidades de tu negocio, contactame a traves de esta pagina."}
                 </Text>
 
-                <GoldButton>Agendar Consulta</GoldButton>
+                <GoldButton href={"https://calendar.google.com/calendar/"} target={"_blank"}>Agendar Consulta</GoldButton>
             </VStack>
         </VStack>
     )

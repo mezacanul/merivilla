@@ -17,7 +17,7 @@ export default function Header({onOpen}) {
     const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
-        console.log(router.asPath);
+        // console.log(router.asPath);
         
         const handleScroll = () => {
             setScrolling(window.scrollY > 50); // Change this value for different thresholds
@@ -31,16 +31,16 @@ export default function Header({onOpen}) {
 
     return (
         <Flex
-            zIndex={10}
-            minH={{base:"4rem", lg: "5rem", xl: "6rem"}}
             alignItems={"center"}
-            backgroundColor={"transparent"}
             position={"fixed"}
             width={"100vw"}
+            zIndex={10}
+            minH={{base:"4rem", lg: "5rem", xl: "6rem"}}
+            backgroundColor={"transparent"}
             bg={scrolling ? "#efefef" : "transparent"} // Transition between colors
             color={scrolling || (((router.asPath) != "/") && ((router.asPath) != "/#contacto") && ((router.asPath) != "/blog")) ? "black" : "white"} // Text color based on background
             boxShadow={scrolling ? "lg" : "none"}
-            transition="background-color 0.4s ease, box-shadow 0.3s ease"
+            transition="all 0.3s ease"
         >
             <Flex w={"100%"} justifyContent={"space-between"} align={"center"} px={"2em"}>
                 <Link
