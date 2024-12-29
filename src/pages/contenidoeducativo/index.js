@@ -4,7 +4,6 @@ import Hero from "@/components/ContenidoEducativo/Hero";
 import Videos from "@/components/ContenidoEducativo/Videos";
 import { useEffect } from "react";
 import { Box, Heading } from "@chakra-ui/react";
-import { BlogCard, MainBlog } from "@/components/Blog_SAVE/Hero";
 import { AgendarConsulta } from "../blog";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,6 +14,8 @@ import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import MainBlog from "@/components/common/MainBlog";
+import BlogCard from "@/components/common/BlogCard";
 
 export async function getServerSideProps(context) {
     console.log("GSSP running");

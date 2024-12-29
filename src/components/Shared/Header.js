@@ -38,7 +38,7 @@ export default function Header({onOpen}) {
             minH={{base:"4rem", lg: "5rem", xl: "6rem"}}
             backgroundColor={"transparent"}
             bg={scrolling ? "#efefef" : "transparent"} // Transition between colors
-            color={scrolling || (((router.asPath) != "/") && ((router.asPath) != "/#contacto") && ((router.asPath) != "/blog")) ? "black" : "white"} // Text color based on background
+            color={scrolling || (((router.asPath) != "/") && ((router.asPath) != "/#contacto") && ((router.asPath) != "/blog"))  && ((router.asPath) != "/ventaje") ? "black" : "white"} // Text color based on background
             boxShadow={scrolling ? "lg" : "none"}
             transition="all 0.3s ease"
         >

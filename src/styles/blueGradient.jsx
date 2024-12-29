@@ -1,0 +1,1 @@
+export default {bgGradient: "linear(to-l, #000000, rgb(150, 218, 235))"}

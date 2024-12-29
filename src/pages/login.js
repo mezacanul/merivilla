@@ -14,11 +14,31 @@ import {
 import { Link as ChakraLink } from "@chakra-ui/react";
 import GoldButton from "@/components/common/GoldButton";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "@/store/slices/userSlice";
+
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverHeader,
+    PopoverBody,
+    PopoverAnchor,
+    // Popover,
+    // PopoverTrigger,
+    // PopoverContent,
+    // PopoverHeader,
+    // PopoverBody,
+    // PopoverFooter,
+    // PopoverArrow,
+    // PopoverCloseButton,
+    // PopoverAnchor,
+} from "@chakra-ui/react";
 
 // export async function getServerSideProps(context) {
 //     const baseURL = `http://${context.req.headers.host}`;
@@ -27,7 +47,6 @@ import { setUser } from "@/store/slices/userSlice";
 //     });
 
 //     console.log("response reload: ", response.data.payload);
-    
 
 //     // const token = response.data.payload; // Extract token from response
 //     // const decoded = jwtDecode(token); // Decode token
@@ -65,6 +84,12 @@ export default function Login() {
     const [success, setSuccess] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const user = useSelector((state) => state.user);
+
+    const [isOpen, setIsOpen] = useState(false);
+    const linkRef = useRef(null); // Ref for positioning the Popover
+
+    const onOpen = () => setIsOpen(true);
+    const onClose = () => setIsOpen(false);
 
     useEffect(() => {
         console.log(user);
@@ -129,17 +154,24 @@ export default function Login() {
                             Inicia sesión para continuar o puedes crear una
                             cuenta{" "}
                         </Text>
-                        <Link href={"/onboard"}>
-                            <Text
-                                as={"b"}
-                                size={{ base: "sm", xl: "md" }}
-                                _hover={{
-                                    textDecor: "underline",
-                                }}
-                            >
-                                aquí
-                            </Text>
-                        </Link>
+                        <Text
+                            ref={linkRef} // Assign ref for PopoverAnchor
+                            onClick={onOpen} // Open the Popover on click
+                            as={"span"}
+                            fontWeight={"bold"}
+                            size={{ base: "sm", xl: "md" }}
+                            _hover={{
+                                textDecor: "underline",
+                                cursor: "pointer",
+                            }}
+                        >
+                            aquí
+                        </Text>
+                        <AdditionalInfo
+                            isOpen={isOpen}
+                            onClose={onClose}
+                            linkRef={linkRef}
+                        />
                     </Text>
                 </Box>
 
@@ -217,5 +249,31 @@ export default function Login() {
             </VStack>
         </Flex>
         // <ComingSoon/>
+    );
+}
+
+function AdditionalInfo({ isOpen, onClose, linkRef }) {
+    return (
+        <Popover isOpen={isOpen} onClose={onClose}>
+            <PopoverAnchor>
+                <span ref={linkRef}></span>
+            </PopoverAnchor>
+            <PopoverContent
+                px={"2rem"}
+                py={"1rem"}
+                bg={"blue"}
+                color={"white"}
+                w={"25rem"}
+            >
+                {/* <PopoverArrow /> */}
+                <PopoverCloseButton color={"white"} />
+                {/* <PopoverHeader>!!</PopoverHeader> */}
+                <PopoverBody fontSize={"lg"}>
+                    Por el momento no estamos registrando usuarios en linea. Si
+                    te gustaria unirte a la lista de espera, contactanos en{" "}
+                    <Text as={"b"} size={"sm"}>{"<informacion de contacto>"}</Text>
+                </PopoverBody>
+            </PopoverContent>
+        </Popover>
     );
 }

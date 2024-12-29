@@ -28,6 +28,8 @@ const theme = extendTheme({
             body: {
                 bg: "white",
                 color: "white",
+                overflowX: "hidden",
+                width: "100vw"
             },
         },
     },

@@ -12,7 +12,7 @@ import Overlay from "../common/Overlay";
 import scaleEffect from "@/utils/scaleEffect";
 import Link from "next/link";
 import { useState } from "react";
-import { BlogCard } from "../Blog_SAVE/Hero";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -22,6 +22,7 @@ import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import BlogCard from "../common/BlogCard";
 
 export default function Contenido({ blogs }) {
     const [blogsData, setBlogsData] = useState([]);

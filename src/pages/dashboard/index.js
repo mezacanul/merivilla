@@ -32,11 +32,11 @@ import Collapsible from "@/layout/Collapsible";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Link as ChakraLink } from "@chakra-ui/react";
-import { BlogCard, BlogsGrid } from "@/components/Blog_SAVE/Hero";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "@/store/slices/userSlice";
 import { useRouter } from "next/router";
+import BlogsGrid from "@/components/common/BlogsGrid";
 
 export async function getServerSideProps(context) {
     console.log("GSSP running");
@@ -168,9 +168,10 @@ export default function Index({ blogs }) {
     );
 }
 
-function BlogCreatorCard({ blog }) {
+function BlogCreatorCard({ blog, ...props }) {
     return (
         <HStack
+            {...props}
             align={"flex-start"}
             border={"1px solid black"}
             borderRadius={"1rem"}
@@ -194,6 +195,7 @@ function BlogCreatorCard({ blog }) {
                 <Box>
                     <Text as={"b"}>{blog.title}</Text>
                     <Text
+                    mt={"1rem"}
                         size={"sm"}
                         maxH={"10rem"}
                         w={"100%"}
@@ -238,6 +240,10 @@ function BlogCreatorCard({ blog }) {
 function BlogList({ blogs }) {
     return (
         <Box w={"100%"} position={"relative"}>
+            <GoldButton mb={"1rem"} href={"/contenidoeducativo/editor/nuevo"}>
+                Crear Nuevo Blog
+            </GoldButton>
+
             <SimpleGrid
                 mt={"1rem"}
                 mb={"3rem"}
@@ -245,14 +251,10 @@ function BlogList({ blogs }) {
                 columns={3}
                 gap={"4rem"}
             >
-                {blogs.map((blog) => (
-                    <BlogCreatorCard blog={blog} />
+                {blogs.map((blog, i) => (
+                    <BlogCreatorCard key={i} blog={blog} />
                 ))}
             </SimpleGrid>
-
-            <GoldButton mb={"2rem"} href={"/contenidoeducativo/editor/nuevo"}>
-                Crear Nuevo Blog
-            </GoldButton>
         </Box>
     );
 }

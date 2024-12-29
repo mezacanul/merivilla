@@ -1,5 +1,5 @@
-import { MainBlog } from "@/components/Blog_SAVE/Hero";
 import GoldButton from "@/components/common/GoldButton";
+import MainBlog from "@/components/common/MainBlog";
 import { Circle, HStack, Text, VStack } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
