@@ -11,6 +11,8 @@ import { RxText, RxTextAlignLeft } from "react-icons/rx";
 import { FiYoutube } from "react-icons/fi";
 import scaleEffect from "@/utils/scaleEffect";
 import { customShadow } from "@/utils/customShadow";
+import { v4 as uuidv4 } from 'uuid';
+
 
 export default function BlocksPanel({ w, formik, fileStorage }) {
     const { errors, touched, setFieldValue } = formik;

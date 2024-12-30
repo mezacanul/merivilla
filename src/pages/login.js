@@ -167,12 +167,12 @@ export default function Login() {
                         >
                             aquí
                         </Text>
-                        <AdditionalInfo
-                            isOpen={isOpen}
-                            onClose={onClose}
-                            linkRef={linkRef}
-                        />
                     </Text>
+                    <AdditionalInfo
+                        isOpen={isOpen}
+                        onClose={onClose}
+                        linkRef={linkRef}
+                    />
                 </Box>
 
                 {/* Formulario  */}
@@ -271,7 +271,9 @@ function AdditionalInfo({ isOpen, onClose, linkRef }) {
                 <PopoverBody fontSize={"lg"}>
                     Por el momento no estamos registrando usuarios en linea. Si
                     te gustaria unirte a la lista de espera, contactanos en{" "}
-                    <Text as={"b"} size={"sm"}>{"<informacion de contacto>"}</Text>
+                    <Text as={"b"} size={"sm"}>
+                        {"<informacion de contacto>"}
+                    </Text>
                 </PopoverBody>
             </PopoverContent>
         </Popover>
